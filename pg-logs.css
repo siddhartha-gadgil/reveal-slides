@@ -1,0 +1,13 @@
+pre {
+    background-color: white;
+    color: black;
+    border: 0px solid #cccccc;
+    border-radius: 0px;
+    font-size: 18px;
+}
+
+.record {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}

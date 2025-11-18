@@ -1,0 +1,114 @@
+ul.numbers li {
+    display: inline;
+}
+
+.prime {
+    background-color: white;
+    color: blue;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.twin-prime {
+    background-color: white;
+    color: blueviolet;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.group {
+    background-color: lightgrey;
+    border-radius: 5px;
+    margin: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    white-space: nowrap;
+}
+
+.number-groups li {
+    display: inline;
+    line-height: 2.4;
+}
+
+.prime-term {
+    color: blueviolet;
+    font-size: 30px;
+}
+
+.prime-term-small {
+    color: blueviolet;
+    font-size: 20px;
+}
+
+.huge {
+    font-size: 180px;
+    text-align: center;
+    margin: auto;
+}
+
+table.box {
+    border: 2px solid white;
+}
+
+.dark {
+    background-color: black;
+    color: lightgrey;
+}
+
+.syntaxhighlighter {
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+}
+
+.smallish {
+    display: inline-block;
+    width: 600px;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    vertical-align: top;
+}
+
+em, strong {
+    color: lightgoldenrodyellow;
+}
+
+code {
+    color: lightgoldenrodyellow;
+}
+
+.copilot {
+    color: cyan;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    max-height: 600px;
+    word-wrap: normal;
+}
+
+html.dimbg .slide-background {
+    opacity: 0.7 !important;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.5em
+}
+
+.smaller {
+    font-size: 35px;
+}
+
+pre, code {
+    white-space: pre-line;
+}
+
+.defn {
+    font-style: italic;
+}

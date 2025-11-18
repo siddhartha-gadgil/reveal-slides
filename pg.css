@@ -1,0 +1,45 @@
+pre {
+    background-color: white;
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: black;
+    border: 0px solid #cccccc;
+    border-radius: 0px
+}
+
+body {
+    background: #191919;
+    background-color: #191919;
+}
+
+.foreground {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: normal;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+pre, code {
+    white-space: pre-line;
+    color: lightgoldenrodyellow;
+}
+
+div{
+    word-wrap: break-word;
+}
+
+em, strong {
+    color: lightgoldenrodyellow;
+}
+
+.larger {
+    font-size: 60px;
+}
