@@ -112,3 +112,8 @@ pre, code {
 .defn {
     font-style: italic;
 }
+
+.hljs-theorem {
+  color: #f92672;
+  font-weight: bold;
+}
