@@ -117,3 +117,7 @@ pre, code {
   color: #f92672;
   font-weight: bold;
 }
+
+.hljs-built_in {
+  color: #8be9fd; /* A distinct color, e.g., light blue */
+}
