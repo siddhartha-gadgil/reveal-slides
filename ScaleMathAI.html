@@ -189,7 +189,7 @@
 					<li class="fragment">
 						<strong>Meta-cognition and loop control:</strong> Manage the reasoning process and make adjustments.
 					</li>
-					<li>Each step is a <em>prompt template</em> and <em>output schema</em>.</li>
+					<li class="fragment">LLM Steps: <em>prompt templates</em> and <em>output schemas</em>.</li>
 				</ul>
 			</section>
 
@@ -372,6 +372,36 @@ def inductionCode (translator : CodeGenerator := {}) :
 			<li class="fragment">The JSON schema is similarly extensible.</li>
 		</ul>
 	</section>
+
+	<section data-background-color="teal">
+		<h4>Improving Autoformalization</h4>
+		<ul>
+			<li class="fragment">For failures in translation of statements/definitions, we can recognize errors and fix in Lean (example <code>∃!</code>) or with LLM help (example <code>∃ [G: Group]</code>).
+			</li>
+			<li>For documents,we must recognize common names, and to extract variables from existence etc. </li>
+			<li class="fragment">We should refine the schema and implement code generators for handling better calculations etc.</li>
+			<li class="fragment">In case automation cannot complete proofs, we can iterate with LLM queries that may be refined (example for the <code>use</code> tactic). </li>
+		</ul>
+	</section>
+
+			<section data-background-color="teal">
+				<ul>
+					<li>
+						LeanAide can be used from within Lean using its syntax, <code>TryThis</code> widgets etc.
+					</li>
+					<li class="fragment">
+						A server-client architecture means only a single dependency-free Lean dependency is needed. 
+					</li>
+					<li class="fragment">
+						We also (will) have web clients and bots as clients.
+					</li>
+					<li class="fragment">
+						Specifically, we will have a chat and canvas interface, with model queries etc, with (auto)-formalization an extra feature.
+					</li>
+					<li class="fragment">How much value is added by incorporating LeanAide will depend on the quality of autoformalization.</li>
+					<li class="fragment">Many improvements will be free &ndash; better AI and better automation in Lean.</li>
+				</ul>
+			</section>
 
 	</div>
 	</div>
