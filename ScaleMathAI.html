@@ -378,8 +378,8 @@ def inductionCode (translator : CodeGenerator := {}) :
 		<ul>
 			<li class="fragment">For failures in translation of statements/definitions, we can recognize errors and fix in Lean (example <code>∃!</code>) or with LLM help (example <code>∃ [G: Group]</code>).
 			</li>
-			<li>For documents,we must recognize common names, and to extract variables from existence etc. </li>
-			<li class="fragment">We should refine the schema and implement code generators for handling better calculations etc.</li>
+			<li class="fragment">For documents,we must recognize common names, and also extract variables from existence claims etc. </li>
+			<li class="fragment">We should refine the schema and implement code generators for better handling calculations etc.</li>
 			<li class="fragment">In case automation cannot complete proofs, we can iterate with LLM queries that may be refined (example for the <code>use</code> tactic). </li>
 		</ul>
 	</section>
