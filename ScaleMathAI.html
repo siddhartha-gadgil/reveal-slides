@@ -103,19 +103,19 @@
 				<h4>AI for Research Mathematics</h4>
 				<ul>
 					<li class="fragment">Mathematicians now routinely chat with AI systems.</li>
-					<li class="fragment">AI systems time-to-time proves lemmas the mathematicians failed to prove, give counterexamples to overoptimistic statements etc.</li>
+					<li class="fragment">AI systems time-to-time prove lemmas the mathematicians failed to prove, give counterexamples to overoptimistic statements etc.</li>
 					<li class="fragment">In some cases, this has led to new mathematics solving open problems.</li>
 					<li class="fragment">Typically, the user feels they could have solved the problem themselves. <span class="fragment">So far, probably no AI system has produced a <em>mind-boggling</em> proof.</span></li>
 					<li class="fragment">Further, mathematics from AI is often inaccurate.</li>
 			</section>
 			
 			<section data-background-color="#002b36">
-				<h4>Systems for special problems</h4>
+				<h4>AI Systems for special problems</h4>
 				<ul>
 					<li class="fragment">Often the core of a mathematical result is a special problem or construction.</li>
 					<li class="fragment">For example, Viazovska's work on sphere-packing problem relies on the construction of a "magic" special function using the theory of modular forms.</li>
 					<li class="fragment">Similarly, an entropy function had a crucial role in Perelman's work on the Poincaré conjecture.</li>
-					<li class="fragment">Systems like <em>AlphaEvolve</em> and <em>PatternBoost</em> allow construction of such functions.</li>
+					<li class="fragment"> AI Systems like <em>AlphaEvolve</em> and <em>PatternBoost</em> allow construction of such functions.</li>
 					<li class="fragment">Systems like <em>SAT/SMT Solvers</em> and <em>Resolution Theorem Provers</em> can also solve special problems.</li>
 			</section>
 
@@ -217,7 +217,7 @@
 			</section>
 
 			<section data-background-color="teal">
-				<h4>Formalization ingredients and Stages</h4>
+				<h4>AutoFormalization: Ingredients and Stages</h4>
 				<ul>
 					<li class="fragment">
 						Formalize statements and definitions using an LLM given examples with results filtered (<em>local step</em>).
@@ -361,13 +361,13 @@ Then $a_n = c$ for all $n$.</li>
 	<section data-background-color="teal">
 		<h4>Implementation of Autoformalization</h4>
 		<ul>
-			<li class="fragment">Autoformalization of statements/definitions is done by finding and adding related examples to the prompt and filtering.</li>
+			<li class="fragment">Autoformalization of statements/definitions is done by finding and adding related examples to the prompt and filtering by <em>elaboration</em>.</li>
 			<li class="fragment">The translation from JSON to Lean code is done by recursively calling functions with an <em>attribute</em> adding them to an <em>environment extension</em>.
 		<pre><code class="language-lean">@[codegen "induction_proof"]
 def inductionCode (translator : CodeGenerator := {}) : 
 	Option MVarId →  (kind: SyntaxNodeKinds) → Json → 
 		TranslateM (Option (TSyntax kind))
-| some goal, ``tacticSeq, js => </code></pre>
+| some goal, ``tacticSeq, js => ...</code></pre>
 			</li>
 			<li class="fragment">The JSON schema is similarly extensible.</li>
 		</ul>
@@ -376,11 +376,11 @@ def inductionCode (translator : CodeGenerator := {}) :
 	<section data-background-color="teal">
 		<h4>Improving Autoformalization</h4>
 		<ul>
-			<li class="fragment">For failures in translation of statements/definitions, we can recognize errors and fix in Lean (example <code>∃!</code>) or with LLM help (example <code>∃ [G: Group]</code>).
+			<li class="fragment">For failures in translation of statements/definitions, we can recognize errors and fix in Lean (for example <code>∃! x y : Nat, ...</code>) or with LLM help (for example <code>∃ [G: Group], ...</code>).
 			</li>
 			<li class="fragment">For documents,we must recognize common names, and also extract variables from existence claims etc. </li>
-			<li class="fragment">We should refine the schema and implement code generators for better handling calculations etc.</li>
 			<li class="fragment">In case automation cannot complete proofs, we can iterate with LLM queries that may be refined (example for the <code>use</code> tactic). </li>
+			<li class="fragment">We should refine the schema and implement code generators for better handling calculations etc.</li>
 		</ul>
 	</section>
 
@@ -393,13 +393,13 @@ def inductionCode (translator : CodeGenerator := {}) :
 						A server-client architecture means only a single dependency-free Lean dependency is needed. 
 					</li>
 					<li class="fragment">
-						We also (will) have web clients and bots as clients.
+						We also (will) have web clients and bots.
 					</li>
 					<li class="fragment">
-						Specifically, we will have a chat and canvas interface, with model queries etc, with (auto)-formalization an extra feature.
+						Specifically, we will have a chat and canvas interface to LLMs, with query-templates, autoformalization etc to help in mathematical discovery.
 					</li>
 					<li class="fragment">How much value is added by incorporating LeanAide will depend on the quality of autoformalization.</li>
-					<li class="fragment">Many improvements will be free &ndash; better AI and better automation in Lean.</li>
+					<li class="fragment">Many improvements will be free &ndash; better AI and better automation in Lean &#x1F600;.</li>
 				</ul>
 			</section>
 
