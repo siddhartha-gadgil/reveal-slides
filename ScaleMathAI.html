@@ -360,6 +360,51 @@ Then $a_n = c$ for all $n$.</li>
 	</code></pre> </section>
 
 	<section data-background-color="teal">
+		<h4>Case Analysis: Fully Automated</h4>
+		<pre><code class="language-lean">theorem real.abs_eq_self_or_neg_self : 
+				∀ (x : ℝ), |x| = if x ≥ 0 then x else -x :=
+    by
+    intro x
+    if condition_17348316901582261903 : x ≥ 0 then
+      simp_all only [ge_iff_le, ↓reduceIte, abs_eq_self, 
+	  	Lake.FamilyOut.fam_eq]
+    else
+      have assert_17706514037871012819 : -x > 0 :=
+        by
+        simp only [gt_iff_lt, Left.neg_pos_iff]
+        exact lt_of_not_ge condition_17348316901582261903
+      have assert_2087718168174578157 : |x| = -x :=
+        by
+        simp only [abs_eq_neg_self, Lake.FamilyOut.fam_eq]
+        exact le_of_not_ge condition_17348316901582261903
+      simp_all only [ge_iff_le, ↓reduceIte, 
+	  	assert_2087718168174578157]
+    done
+	</code></pre>
+	</section>
+
+	<section data-background-color="teal">
+		<h4>Using Lemmas</h4>
+		<ul>
+			<li>Some manual fixing for now was needed due to bugs.</li>
+			<pre>
+<code class="language-lean">theorem cos_mul_cos :
+      ∀ (x y : ℝ), Real.cos x * Real.cos y = 
+	  		1 / 2 * (Real.cos (x + y) + Real.cos (x - y)) := by
+    intro x y
+    have assert_3697423740917030100 : Real.cos (x + y) = 
+			Real.cos x * Real.cos y - Real.sin x * Real.sin y := by
+      exact Real.cos_add x y
+    have assert_1179973433540343582 : Real.cos (x - y) = 
+			Real.cos x * Real.cos y + Real.sin x * Real.sin y := by
+      exact Real.cos_sub x y
+    grind
+	</code>
+			</pre>
+		</ul>
+	</section>
+
+	<section data-background-color="teal">
 		<h4>Implementation of Autoformalization</h4>
 		<ul>
 			<li class="fragment">Autoformalization of statements/definitions is done by finding and adding related examples to the prompt and filtering by <em>elaboration</em>.</li>
