@@ -62,9 +62,9 @@
 					<li>AI systems have shown impressive capabilities in Mathematical reasoning, including a Gold medal score at the IMO, and have become genuinely helpful in mathematical research.</li>
 					<li class="fragment">However, they still have (related) limitations:
 						<ul>
-							<li class="fragment"><strong>Accuracy</strong>: in mathematics errors cascade.</li>
-							<li class="fragment"><strong>Autonomy</strong>: as they need human verification.</li>
-							<li class="fragment"><strong>Scalability</strong>: limited by needing human guidance.</li>
+							<li><strong>Accuracy</strong>: in mathematics errors cascade.</li>
+							<li><strong>Autonomy</strong>: as they need human verification.</li>
+							<li><strong>Scalability</strong>: limited by needing human guidance.</li>
 						</ul>
 					</li>
 					<li class="fragment">An approach is to use a <em>Formal Proof System</em> for verification, and <strong>Autoformalization</strong> as a bridge.</li>
@@ -107,7 +107,7 @@
 					<li class="fragment">AI systems time-to-time prove lemmas the mathematicians failed to prove, give counterexamples to overoptimistic statements etc.</li>
 					<li class="fragment">In some cases, this has led to new mathematics solving open problems.</li>
 					<li class="fragment">Typically, the user feels they could have solved the problem themselves. <span class="fragment">So far, probably no AI system has produced a <em>mind-boggling</em> proof.</span></li>
-					<li class="fragment">Further, mathematics from AI is often inaccurate.</li>
+					<li class="fragment">More seriously, mathematics from AI is often inaccurate.</li>
 			</section>
 			
 			<section data-background-color="#002b36">
@@ -167,7 +167,7 @@
 			</section>
 
 			<section data-background-color="teal">
-				<h4>Mathematical Reasoning loop</h4>
+				<h4>Mathematical Reasoning loop for AI</h4>
 				<ul>
 					<li class="fragment">
 						<strong>Problem Deconstruction & Formalization:</strong> Hypothesis and Conclusion, Definitions etc.
@@ -176,7 +176,7 @@
 						<strong>Problem Inspection:</strong> Easy, Hard, or Study first?
 					</li>
 					<li class="fragment">
-						<strong>Source Material Analysis:</strong> If studying a source first.
+						<strong>Source Material Analysis</strong> (if studying a source first).
 					</li>
 					<li class="fragment">
 						<strong>Strategy & Plan Generation:</strong> Come up with Proof Sketch and Auxiliary Questions.
@@ -223,8 +223,9 @@
 					<li class="fragment">
 						Formalize statements and definitions using an LLM given examples with results filtered (<em>local step</em>).
 					</li>
+					<li class="fragment">For documents/proofs (<em>global steps</em>):<ul>
 					<li class="fragment">
-						Generate/Rewrite proofs or documents in a formalization-friendly style.
+						Generate/Rewrite in a formalization-friendly style.
 					</li>
 					<li class="fragment">
 						Generate a structured JSON representation of the mathematical text according to a formal schema.
@@ -237,6 +238,7 @@
 							<li class="fragment">Automation to complete proofs.</li>
 						</ul>
 					</li>
+					</ul></li>
 				</ul>
 			</section>
 
@@ -390,13 +392,19 @@ Then $a_n = c$ for all $n$.</li>
 			<pre>
 <code class="language-lean">theorem cos_mul_cos :
       ∀ (x y : ℝ), Real.cos x * Real.cos y = 
-	  		1 / 2 * (Real.cos (x + y) + Real.cos (x - y)) := by
+	  	1 / 2 * (Real.cos (x + y) + 
+				Real.cos (x - y)) := 
+	by
     intro x y
-    have assert_3697423740917030100 : Real.cos (x + y) = 
-			Real.cos x * Real.cos y - Real.sin x * Real.sin y := by
+    have assert_3697423740917030100 : 
+			Real.cos (x + y) =  
+				Real.cos x * Real.cos y - 
+				Real.sin x * Real.sin y := by
       exact Real.cos_add x y
-    have assert_1179973433540343582 : Real.cos (x - y) = 
-			Real.cos x * Real.cos y + Real.sin x * Real.sin y := by
+    have assert_1179973433540343582 : 
+			Real.cos (x - y) = 
+				Real.cos x * Real.cos y + 
+				Real.sin x * Real.sin y := by
       exact Real.cos_sub x y
     grind
 	</code>
@@ -408,7 +416,7 @@ Then $a_n = c$ for all $n$.</li>
 		<h4>Implementation of Autoformalization</h4>
 		<ul>
 			<li class="fragment">Autoformalization of statements/definitions is done by finding and adding related examples to the prompt and filtering by <em>elaboration</em>.</li>
-			<li class="fragment">The translation from JSON to Lean code is done by recursively calling functions with an <em>attribute</em> adding them to an <em>environment extension</em>.
+			<li class="fragment">The translation from JSON to Lean code is done by recursively calling functions with an <em>attribute</em> adding them to a scoped <em>environment extension</em>.
 		<pre><code class="language-lean">@[codegen "induction_proof"]
 def inductionCode (translator : CodeGenerator := {}) : 
 	Option MVarId →  (kind: SyntaxNodeKinds) → Json → 
