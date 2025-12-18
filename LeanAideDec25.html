@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>AI by Autoformalization</title>
+
+	<meta name="description" content="ICTS 2024 summer school lecture">
+	<meta name="author" content="Siddhartha Gadgil">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+	<link rel="stylesheet" href="kwk.css">
+
+	<link rel="icon" href="IIScLogo.jpg">
+
+
+
+
+	<style>
+		.hljs-built_in {
+		  color: #8be9fd !important;
+		}
+		</style>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside this container is displayed as a slide -->
+		<section class="slides">
+			<section data-transition="slide">
+				<h2>Accuracy and Scaling for</h2>
+				<h2 style="color:#fffdd0">AI for Mathematics</h2>
+				<h4>via</h4>
+				<h3 style="color:#fffdd0">(Auto)formalization</h3>
+				<h4>Siddhartha Gadgil</h4>
+				<p>Department of Mathematics</p>
+				<p>Indian Institute of Science, Bangalore</p>
+
+
+			</section>
+
+			<section>
+				<ul>
+					<li>AI systems have shown impressive capabilities in Mathematical reasoning, including a Gold medal score at the IMO, and have become genuinely helpful in mathematical research.</li>
+					<li class="fragment">However, they still have (related) limitations:
+						<ul>
+							<li><strong>Accuracy</strong>: in mathematics errors cascade.</li>
+							<li><strong>Autonomy</strong>: as they need human verification.</li>
+							<li><strong>Scalability</strong>: limited by needing human guidance.</li>
+						</ul>
+					</li>
+					<li class="fragment">An approach is to use a <em>Formal Proof System</em> such as Lean for verification.</li>
+					<li class="fragment"><strong>Autoformalization</strong> - automated translation from natural language to Lean, acts as a bridge.</li>
+				</ul>
+			</section>
+
+
+
+			<section data-transition="zoom-in slide-out" data-background-image="campus.jpg">
+				<h1>LeanAide:</h1>
+				<h2>Design and Implementation</h2>
+			</section>
+
+
+			<section data-background-color="teal">
+				<h4>AutoFormalization: Ingredients and Stages</h4>
+				<ul>
+					<li class="fragment">
+						Formalize statements and definitions using an LLM given examples with results filtered (<em>local step</em>).
+					</li>
+					<li class="fragment">For documents/proofs (<em>global steps</em>):<ul>
+					<li class="fragment">
+						Generate/Rewrite in a formalization-friendly style.
+					</li>
+					<li class="fragment">
+						Generate a structured JSON representation of the mathematical text according to a formal schema.
+					</li>
+					<li class="fragment">
+						Translate iteratively into Lean code, using:
+						<ul>
+							<li class="fragment">Translation of statements and definitions.</li>
+							<li class="fragment">Lean meta-programming to build Lean code from Lean theorems and definitions.</li>
+							<li class="fragment">Automation to complete proofs.</li>
+						</ul>
+					</li>
+					</ul></li>
+				</ul>
+			</section>
+
+
+			<section data-background-video="leanaide-mar25.mp4" data-background-video-muted data-background-size="contain"> </section>
+
+			<section data-background-color="teal">
+				<h4>Example: Formalizing a simple theorem</h4>
+				<ul>
+					<li><strong>Theorem:</strong> Let $(a_n)$ be a sequence defined by $a_0=c$ and $a_{n+1} = a_n$ for all $n$.
+Then $a_n = c$ for all $n$.</li>
+					<li><strong>Proof:</strong> (LLM Generated)<ul>
+					<li>By induction</li>
+					<li>Base case: $a_0=c$ by definition.</li>
+					<li>Inductive step: if $a_n=c$, then $a_{n+1}=a_n=c$.</li>
+					<li>Thus $a_n=c$ for all $n$.</li>
+					</ul></li>
+					<ul>
+						
+
+
+				</ul>
+			</section>
+			<section data-background-color="teal">
+				<h4>Formalized Theorem JSON Representation</h4>
+				<pre><code class="language-json">{
+  "document": {
+    "type": "document",
+    "body": [
+      {
+        "type": "Theorem",
+        "header": "Theorem",
+        "label": "thm:constant_sequence",
+        "hypothesis": [
+          {
+            "type": "let_statement",
+            "variable_name": "(a_n)",
+            "statement": "Let $(a_n)$ be a sequence 
+			defined by $a_0=c$ and $a_{n+1} = a_n$ for all $n$."
+          }
+        ],
+        "claim": "$a_n = c$ for all $n$.",
+        "proof": [
+          {
+            "type": "induction_proof",
+            "on": "n",
+            "base_case_proof": [
+              {
+                "type": "assert_statement",
+                "claim": "$a_0 = c$",
+                "proof_method": "by definition"
+              }
+            ],
+            "induction_step_proof": [
+              {
+                "type": "assume_statement",
+                "assumption": "Assume $a_n = c$."
+              },
+              {
+                "type": "calculation",
+                "inline_calculation": "a_{n+1} = a_n = c",
+                "calculation_sequence": [
+                  "a_{n+1} = a_n",
+                  "= c"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "conclude_statement",
+            "claim": "Thus $a_n = c$ for all $n$."
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre> </section>
+
+<section data-background-color="teal">
+	<h4>Formalized Theorem in Lean</h4>
+	<pre>
+<code class="language-lean">theorem constant_seq_eq_of_const_init :
+      ∀ {α : Type u} (c : α) (a : ℕ → α),
+        a 0 = c → (∀ (n : ℕ), a (n + 1) = a n) → 
+			∀ (n : ℕ), a n = c :=
+    by
+    intro α c a a_18193650970466190054 a_18068984259474765511 n
+    induction n with
+    | zero =>
+      grind only
+    | succ n ih =>
+      grind only
+    done
+	</code>
+	</pre>
+</section>
+
+
+			<section data-background-color="teal">
+				<h4>Example: Case Analysis</h4>
+				<pre><code class="language-json">"theorem" : {
+"claim" : "∀ n : ℕ, n = 1  ∨ n = 2 → n < 3",
+"proof" : {"multi-condition_cases_proof" : {
+	"on" : "n",
+	"proof_cases" : [
+	{"condition" : "n = 1", "proof" : []},
+	{"condition" : "n = 2", "proof" : []}
+	]}}}</code>
+<code class="language-lean">theorem nat_eq_one_or_eq_two_imp_lt_three : ∀ (n : ℕ), 
+			n = 1 ∨ n = 2 → n < 3 := by
+    intro n a_12668439849020315063
+    if condition_15952715909003343985 : n = 1 then
+      grind only
+    else
+      if condition_1530173634913780371 : n = 2 then
+        grind only
+      else
+        grind only
+    done
+	</code></pre> </section>
+
+	<section data-background-color="teal">
+		<h4>Case Analysis: Fully Automated</h4>
+		<pre><code class="language-lean">theorem real.abs_eq_self_or_neg_self : 
+				∀ (x : ℝ), |x| = if x ≥ 0 then x else -x :=
+    by
+    intro x
+    if condition_17348316901582261903 : x ≥ 0 then
+      simp_all only [ge_iff_le, ↓reduceIte, abs_eq_self, 
+	  	Lake.FamilyOut.fam_eq]
+    else
+      have assert_17706514037871012819 : -x > 0 :=
+        by
+        simp only [gt_iff_lt, Left.neg_pos_iff]
+        exact lt_of_not_ge condition_17348316901582261903
+      have assert_2087718168174578157 : |x| = -x :=
+        by
+        simp only [abs_eq_neg_self, Lake.FamilyOut.fam_eq]
+        exact le_of_not_ge condition_17348316901582261903
+      simp_all only [ge_iff_le, ↓reduceIte, 
+	  	assert_2087718168174578157]
+    done
+	</code></pre>
+	</section>
+
+	<section data-background-color="teal">
+		<h4>Using Lemmas</h4>
+		<ul>
+			<li>Some manual fixing for now was needed.</li>
+			<pre>
+<code class="language-lean">theorem cos_mul_cos :
+      ∀ (x y : ℝ), Real.cos x * Real.cos y = 
+	  	1 / 2 * (Real.cos (x + y) + 
+				Real.cos (x - y)) := 
+	by
+    intro x y
+    have assert_3697423740917030100 : 
+			Real.cos (x + y) =  
+				Real.cos x * Real.cos y - 
+				Real.sin x * Real.sin y := by
+      exact Real.cos_add x y
+    have assert_1179973433540343582 : 
+			Real.cos (x - y) = 
+				Real.cos x * Real.cos y + 
+				Real.sin x * Real.sin y := by
+      exact Real.cos_sub x y
+    grind
+	</code>
+			</pre>
+		</ul>
+	</section>
+
+	<section data-background-color="teal">
+		<h4>Implementation of Autoformalization</h4>
+		<ul>
+			<li class="fragment">Autoformalization of statements/definitions is done by finding and adding related examples to the prompt and filtering by <em>elaboration</em>.</li>
+			<li class="fragment">The translation from JSON to Lean code is done by recursively calling functions with an <em>attribute</em> adding them to a scoped <em>environment extension</em>.
+		<pre><code class="language-lean">@[codegen "induction_proof"]
+def inductionCode (translator : CodeGenerator := {}) : 
+	Option MVarId →  (kind: SyntaxNodeKinds) → Json → 
+		TranslateM (Option (TSyntax kind))
+| some goal, ``tacticSeq, js => ...</code></pre>
+			</li>
+			<li class="fragment">The JSON schema is similarly extensible.</li>
+		</ul>
+	</section>
+
+
+	</div>
+	</div>
+
+
+<!-- 3. Load Reveal.js -->
+<script src="dist/reveal.js"></script>
+
+<!-- 4. Load the Highlight.js plugin for Reveal -->
+<script src="plugin/highlight/highlight.js"></script>
+
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/math/math.js"></script>
+
+	<script>
+
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+			Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			hash: true,
+
+			transition: 'slide', // none/fade/slide/concave/concave/zoom
+
+
+			mathjax2: {
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+
+						highlight: {
+							beforeHighlight: (hljs) => {
+								function lean(hljs) {
+									const KEYWORDS = {
+										$pattern: /\\w+|λ|∀|Π|∃|:=?/u,
+										keyword: "theorem|10 lemma|10 definition def class structure instance example inductive coinductive axiom axioms hypothesis constant constants universe universes variable variables parameter parameters begin end infix infixr import open theory prelude renaming hiding exposing calc  match do  by let in extends fun assume #check #eval #reduce #print λ ∀ ∃ Π",
+										built_in: "Type Prop|10 Sort rw|10 rewrite rwa erw subst substs simp dsimp simpa simp_intros finish unfold unfold1 dunfold unfold_projs unfold_coes delta cc ac_reflexivity ac_refl existsi|10 cases rcases with intro intros introv by_cases refl rfl funext propext exact exacts refine apply eapply fapply apply_with apply_instance induction rename assumption revert generalize specialize clear contradiction by_contradiction by_contra trivial exfalso grind by only symmetry transitivity destruct constructor econstructor left right split injection injections repeat try continue skip swap solve1 abstract all_goals any_goals done fail_if_success success_if_fail guard_target guard_hyp have replace at suffices show from congr congr_n congr_arg norm_num ring ",
+										literal: "tt ff",
+										meta: "noncomputable|10 private protected meta mutual",
+										section: "section namespace end",
+										sorry: "sorry admit",
+										symbol: ":="
+									};
+									const COMMENT1 = hljs.COMMENT("--", "$");
+									const COMMENT2 = hljs.COMMENT("/-[^-]", "-/");
+									const THEOREM = {
+										className: "theorem",
+										beginKeywords: "def theorem lemma class instance structure",
+										end: /:=/,
+										excludeEnd: true,
+										contains: [{
+											className: "keyword",
+											begin: /extends/,
+											contains: [{
+												className: "symbol",
+												begin: /:=/,
+												endsParent: true
+											}]
+										}, hljs.inherit(hljs.TITLE_MODE, {
+											begin: /[A-Za-z_][\\w\u207F-\u209C\u1D62-\u1D6A\u2079']*/
+										}), {
+											className: "params",
+											begin: /[([{]/,
+											end: /[)\]}]/,
+											endsParent: false,
+											keywords: KEYWORDS
+										}, {
+											className: "symbol",
+											begin: /:=/,
+											endsParent: true
+										}, {
+											className: "symbol",
+											begin: /:/,
+											endsParent: true
+										}],
+										keywords: KEYWORDS
+									};
+			
+									const BUILT_IN_WORDS = KEYWORDS.built_in.replace(/\|10/g, '').trim().split(' ').join('|');
+			
+									return {
+										name: "lean",
+										keywords: KEYWORDS,
+										contains: [
+											{
+												className: 'built_in',
+												begin: '\\b(' + BUILT_IN_WORDS + ')\\b'
+											},
+											hljs.QUOTE_STRING_MODE,
+											hljs.NUMBER_MODE,
+											COMMENT1,
+											COMMENT2,
+											{
+												className: "doctag",
+												begin: "/-[-!]",
+												end: "-/"
+											},
+											THEOREM,
+											{
+												className: "meta",
+												begin: "@\\[",
+												end: "\\]"
+											}, {
+												className: "meta",
+												begin: "^attribute",
+												end: "$"
+											}, {
+												begin: /\u27e8/
+											}
+										]
+									};
+								}
+								hljs.registerLanguage('lean', lean);
+							}
+						},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [
+				RevealMarkdown,
+				RevealHighlight,
+				RevealNotes,
+				RevealMath.MathJax2
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>
