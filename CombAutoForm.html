@@ -58,9 +58,16 @@
 			</section>
 
 			<section>
+				<blockquote style="font-size: 1.5em; line-height: 1.1;">
+					 &ldquo;No artist desires to prove anything. Even things that are true can be proved.&rdquo;
+				</blockquote>
+				Oscar Wilde.
+			</section>
+
+			<section>
 				<ul>
 					<li>AI systems have shown impressive capabilities in Mathematical reasoning, including a Gold medal
-						score at the IMO, and have become genuinely helpful in mathematical research.</li>
+						score at the IMO, and solving many open research problems (e.g. Erdos Unit Distance Conjecture).</li>
 					<li class="fragment">However, they still have (related) limitations:
 						<ul>
 							<li><strong>Accuracy</strong>: in mathematics errors cascade.</li>
@@ -175,14 +182,13 @@
 				<h4>Combinatory Code Generation</h4>
 				<ul>
 					<li class="fragment">Code generation is done recursively putting together code generation functions that take in JSON and output Syntax.</li>
-					<li class="fragment">A function <code>getCode</code> combines these.</li>
-					</li>
+					<li class="fragment">A function <code>getCode</code> combines these.
 					<pre>
 						<code class="language-lean">partial def getCode  (translator: CodeGenerator) (goal? : Option MVarId) 
     (kind: SyntaxNodeKinds) (source: Json) : 
 			TranslateM (Option (TSyntax kind)) := 
 							</code>
-					</pre>
+					</pre></li>
 					<li class="fragment">The code generation functions can call <code>getCode</code> for recursive code generation.</li>
 				</ul>
 			</section>
