@@ -60,24 +60,329 @@
 
 			</section>
 
+			<section data-background-color="#123b4a">
+				<h4>AI Mathematics, 2022&ndash;2026: A Mechanism Timeline</h4>
+				<table style="font-size:0.52em;">
+					<thead>
+						<tr>
+							<th>Rough date</th>
+							<th>System advance</th>
+							<th>Mathematical signal</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nov 2022</td>
+							<td>ChatGPT: general conversational foundation model</td>
+							<td>Fluent mathematical dialogue, but unreliable proofs</td>
+						</tr>
+						<tr>
+							<td>Mar&ndash;Nov 2023</td>
+							<td>GPT-4; browser, Python, retrieval and function calling</td>
+							<td>Models can calculate, search and check examples</td>
+						</tr>
+						<tr>
+							<td>Jan&ndash;Jul 2024</td>
+							<td>Neuro-symbolic search and formal proof</td>
+							<td>IMO silver: 28/42</td>
+						</tr>
+						<tr>
+							<td>Sep&ndash;Dec 2024</td>
+							<td>o1/o3: reasoning trained with test-time compute</td>
+							<td>A new scaling axis for hard mathematics</td>
+						</tr>
+						<tr>
+							<td>Early&ndash;Jul 2025</td>
+							<td>Tool-using reasoners and agent infrastructure</td>
+							<td>IMO gold: 35/42, in natural language</td>
+						</tr>
+						<tr>
+							<td>Aug&ndash;Dec 2025</td>
+							<td>Foundation and reasoning models become one routed system</td>
+							<td>Longer, more reliable research workflows</td>
+						</tr>
+						<tr>
+							<td>Feb&ndash;Jul 2026</td>
+							<td>Long-horizon and parallel research agents</td>
+							<td>Open problems; reported IMO 42/42</td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/chatgpt/</li>
+						<li>https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/</li>
+						<li>https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/
+						</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Nov 2022&ndash;2023: Language Models Acquire Tools</h4>
+				<ul style="font-size:0.82em;">
+					<li><strong>November 2022:</strong> ChatGPT made instruction-following language models widely
+						usable.</li>
+					<li class="fragment"><strong>March 2023:</strong> GPT-4 improved abstract reasoning; ChatGPT plugins
+						added a browser, retrieval and a sandboxed Python interpreter.</li>
+					<li class="fragment"><strong>June&ndash;November 2023:</strong> function calling and the Assistants
+						API made tool use programmable and repeatable.</li>
+					<li class="fragment">For mathematics, the model no longer had to do everything in its weights: it
+						could calculate, enumerate cases, retrieve facts and test conjectures.</li>
+					<li class="fragment"><strong>But:</strong> tool calls were usually short and human-directed; there
+						was no medal-level IMO result from a general-purpose model.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/chatgpt/</li>
+						<li>https://openai.com/index/gpt-4-research/</li>
+						<li>https://openai.com/index/chatgpt-plugins/</li>
+						<li>https://openai.com/index/function-calling-and-other-api-updates/</li>
+						<li>https://openai.com/index/new-models-and-developer-products-announced-at-devday/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>2024: Specialized Systems Reach IMO Silver</h4>
+				<ul style="font-size:0.81em;">
+					<li><strong>January:</strong> AlphaGeometry solved 25 of 30 historical Olympiad geometry problems by
+						combining a language model with a symbolic deduction engine.</li>
+					<li class="fragment"><strong>July:</strong> AlphaProof and AlphaGeometry 2 solved four of six IMO
+						problems for <strong>28/42</strong>, the silver-medal threshold.</li>
+					<li class="fragment">AlphaProof translated problems into Lean and used reinforcement learning to
+						search for machine-checked proofs.</li>
+					<li class="fragment">This was a decisive reliability advance: the verifier rejected invalid proof
+						steps exactly.</li>
+					<li class="fragment"><strong>Limitation:</strong> a specialized formal pipeline, expensive search
+						and manual formalization&mdash;not yet a general mathematical conversationalist.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/</li>
+						<li>https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/</li>
+						<li>https://www.nature.com/articles/s41586-025-09833-y</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Sep&ndash;Dec 2024: Test-Time Compute Becomes a Scaling Axis</h4>
+				<ul style="font-size:0.82em;">
+					<li><strong>September:</strong> o1 was trained to reason through long chains before answering.</li>
+					<li class="fragment">Performance improved both with more reinforcement-learning compute and with
+						more <strong>inference-time thinking</strong>.</li>
+					<li class="fragment"><strong>December:</strong> o1 Pro explicitly spent more compute on harder
+						questions; o3 was previewed as the next reasoning generation.</li>
+					<li class="fragment">The conceptual shift: instead of asking only for a larger pretrained model,
+						allocate adaptive compute to search, critique and revise a solution.</li>
+					<li class="fragment">This resembles giving a mathematician scratch time&mdash;though extra thought
+						can still amplify a false premise.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/learning-to-reason-with-llms/</li>
+						<li>https://openai.com/index/introducing-chatgpt-pro/</li>
+						<li>https://openai.com/index/openai-o3-mini/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Early 2025: Reasoning, Tools and Agents Converge</h4>
+				<ul style="font-size:0.80em;">
+					<li><strong>January&ndash;March:</strong> Operator, deep research, the Responses API and Agents SDK
+						made multi-step action loops practical.</li>
+					<li class="fragment"><strong>April:</strong> o3 and o4-mini could reason about when and how to use
+						web search, Python, files and visual inputs.</li>
+					<li class="fragment">A tool call answers: <em>what computation should I run now?</em></li>
+					<li class="fragment">An agent loop additionally decides: <em>what subgoal comes next, what evidence
+							is missing, and when should I retry or stop?</em></li>
+					<li class="fragment">For mathematics this enables experimental search, literature checking,
+						counterexample hunting and independent verification inside one workflow.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/introducing-operator/</li>
+						<li>https://openai.com/index/introducing-deep-research/</li>
+						<li>https://openai.com/index/new-tools-for-building-agents/</li>
+						<li>https://openai.com/index/introducing-o3-and-o4-mini/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Jul&ndash;Dec 2025: IMO Gold and a Unified Model</h4>
+				<ul style="font-size:0.79em;">
+					<li><strong>July:</strong> OpenAI and DeepMind systems each solved five of six IMO problems for
+						<strong>35/42</strong>&mdash;gold-medal level.
+					</li>
+					<li class="fragment">Unlike the 2024 result, these were general-purpose reasoning models producing
+						proofs in natural language.</li>
+					<li class="fragment"><strong>August:</strong> GPT-5 integrated a fast foundation model, deeper
+						reasoning model and router into one system.</li>
+					<li class="fragment">Thus broad pretrained knowledge, deliberate reasoning and tool selection ceased
+						to be separate user choices.</li>
+					<li class="fragment"><strong>December:</strong> GPT-5.2 strengthened long-context, tool-using work;
+						with Python and maximum reasoning it scored 40.3% on FrontierMath Tiers 1&ndash;3.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/
+						</li>
+						<li>https://www.reuters.com/world/asia-pacific/google-openais-ai-models-win-milestone-gold-global-math-competition-2025-07-21/
+						</li>
+						<li>https://openai.com/index/introducing-gpt-5/</li>
+						<li>https://openai.com/index/introducing-gpt-5-2/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Feb&ndash;Apr 2026: Agents Enter Research-Grade Mathematics</h4>
+				<ul style="font-size:0.78em;">
+					<li><strong>February:</strong> an internal model attempted all ten First Proof research problems;
+						OpenAI judged at least five attempts likely correct after expert feedback.</li>
+					<li class="fragment">The workflow used long reasoning, retries, selection among attempts and a
+						second model for checking and exposition&mdash;with limited human supervision.</li>
+					<li class="fragment"><strong>March:</strong> GPT-5.4 added native computer use and up to one million
+						tokens of context, supporting persistent multi-stage work.</li>
+					<li class="fragment"><strong>April:</strong> an internal GPT-5.5 system with a custom harness helped
+						discover a new proof about off-diagonal Ramsey numbers, later verified in Lean.</li>
+					<li class="fragment">The unit of capability was now <strong>model + memory + tools + verifier +
+							orchestration</strong>, not the model alone.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/first-proof-submissions/</li>
+						<li>https://openai.com/index/introducing-gpt-5-4/</li>
+						<li>https://openai.com/index/introducing-gpt-5-5/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>May&ndash;Jul 2026: Autonomous Mathematical Results</h4>
+				<ul style="font-size:0.78em;">
+					<li><strong>May:</strong> a general-purpose OpenAI model disproved the Erdős unit-distance
+						conjecture using an unexpected bridge from algebraic number theory.</li>
+					<li class="fragment"><strong>July:</strong> GPT-5.6 Sol Ultra produced a proof of the Cycle Double
+						Cover Conjecture using 64 parallel subagents; an independent exposition followed.</li>
+					<li class="fragment"><strong>IMO 2026:</strong> GPT-5.6 Pro was reported to solve all six problems
+						on the first attempt without human steering: <strong>42/42</strong>.</li>
+					<li class="fragment">Parallel agents add a further test-time scaling axis: explore many proof plans,
+						then synthesize the strongest line.</li>
+					<li class="fragment"><strong>Caution:</strong> IMO scores are clean tests of problem solving;
+						research claims still require provenance, novelty checks and expert or formal verification.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/model-disproves-discrete-geometry-conjecture/</li>
+						<li>https://openai.com/index/gpt-5-6/</li>
+						<li>https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf</li>
+						<li>https://arxiv.org/abs/2607.16356</li>
+						<li>https://www.linkedin.com/posts/akashnil-dutta-72894a100_imo-2026-performance-by-chatgpt-56-pro-activity-7483603460488273922-g1Yh
+						</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>What Actually Changed?</h4>
+				<table style="font-size:0.58em;">
+					<thead>
+						<tr>
+							<th>Advance</th>
+							<th>What it adds to mathematical work</th>
+							<th>Remaining failure mode</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Foundation-model scale</td>
+							<td>Language, concepts, analogies, literature priors</td>
+							<td>Fluent but brittle proof</td>
+						</tr>
+						<tr>
+							<td>Multimodality</td>
+							<td>Diagrams, handwritten work, geometric representations</td>
+							<td>Perception is not geometric understanding</td>
+						</tr>
+						<tr>
+							<td>Tools</td>
+							<td>Exact computation, search, experiments and retrieval</td>
+							<td>Bad questions produce irrelevant evidence</td>
+						</tr>
+						<tr>
+							<td>Formal verification</td>
+							<td>Local correctness and reusable proof objects</td>
+							<td>Autoformalization and library gaps</td>
+						</tr>
+						<tr>
+							<td>Test-time compute</td>
+							<td>Search, self-critique and revision</td>
+							<td>Cost; correlated errors</td>
+						</tr>
+						<tr>
+							<td>Unified routing</td>
+							<td>Matches effort and tools to each subproblem</td>
+							<td>Router can choose badly</td>
+						</tr>
+						<tr>
+							<td>Long-horizon agents</td>
+							<td>Decomposition, memory, retries and parallel proof plans</td>
+							<td>Global coherence, novelty and provenance</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="fragment" style="font-size:0.70em;"><strong>IMO progress measures the whole stack.</strong> It
+					does not isolate the contribution of a larger model, more thinking time, tools, formalization or
+					orchestration.</p>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/hello-gpt-4o/</li>
+						<li>https://openai.com/index/learning-to-reason-with-llms/</li>
+						<li>https://openai.com/index/introducing-gpt-5/</li>
+						<li>https://openai.com/index/new-tools-for-building-agents/</li>
+						<li>https://www.nature.com/articles/s41586-025-09833-y</li>
+					</ul>
+				</aside>
+			</section>
+
+
+			<section data-background-image="hills.png"></section>
+
+
 			<section>
 				<ul>
-					<li>AI systems have shown impressive capabilities in Mathematical reasoning, including a Gold medal
-						score at the IMO, and solving many open research problems (e.g. Erdos Unit Distance Conjecture).</li>
-					<li class="fragment">However, they still have (related) limitations:
-						<ul>
-							<li><strong>Accuracy</strong>: in mathematics errors cascade.</li>
-							<li><strong>Autonomy</strong>: as they need human verification.</li>
-							<li><strong>Scalability</strong>: limited by needing human guidance.</li>
-						</ul>
+					<li>With a flood of AI generated proofs, checking them becomes a significant challenge.</li>
+
+					<li class="fragment">This was especially so for problems not significant enough to motivate others
+						to check.</li>
+					<li class="fragment">Fortunately the development of formal verification tools, specifically
+						<strong>Lean</strong> and <strong>Mathlib</strong>, has allowed checking to be reduced to
+						checking statements.
 					</li>
-					<li class="fragment">An approach is to use a <em>Formal Proof System</em> for verification, and
-						<strong>Autoformalization</strong> as a bridge.</li>
-					<li class="fragment">We specifically use <em>LeanLang</em> as our formal proof system.</li>
+
+					<li class="fragment">In many cases, AI can generate Lean proofs.</li>
+					<li class="fragment">For example, when I told it to use the online Lean server, ChatGPT
+						(GPT-5.6-Sol) one-shotted a Lean proof of the counterexample to the <strong>Jacobian
+							Conjecture</strong> in about 15 minutes.</li>
+
 				</ul>
 			</section>
 
-						<section>
+
+			<section>
 				<h4> Lean Prover</h4>
 				<ul>
 					<li class="fragment">Lean is a functional programming language with a fast runtime which is
@@ -98,64 +403,73 @@
 				<ul>
 
 
-					<li class="fragment">Formalization in Lean thus allows for programs, algorithms, and proofs to be
-						written in a unified framework.</li>
-					<li class="fragment">We get not only guaranteed correctness but also modularity with enforced
+					<li class="fragment">Formalized proofs are verified by the <strong>Kernel</strong>, which is a
+						relatively small component. Lean also has independent kernels.</li>
+					<li class="fragment">Formalization in Lean gives not only guaranteed correctness but also modularity
+						with enforced
 						abstraction boundaries.</li>
-					<li class="fragment">Lean is mostly written in Lean and has a pleasant meta-programming interface.
+					<li class="fragment">Lean has a large and growing library of formalized mathematics, called
+						<strong>Mathlib</strong>.
+					</li>
 					</li>
 
-					<li class="fragment">Thus, Lean provides a common language that is mathematically and Turing
-						complete, is easily extensible, and with excellent tooling and engineering (e.g., FBIP, IDE
-						support).</li>
+					<li class="fragment">There are also efforts to have much faster-growing vibe-coded libraries,
+						notably the <em>Tau Ceti</em> project.</li>
 
 				</ul>
 			</section>
 
-
-			<section data-background-color="#243447">
-				<h4>Rapid Progress in AI Mathematics</h4>
-				<ul>
-					<li><strong>IMO 2024:</strong> AlphaProof and AlphaGeometry 2 reached silver-medal level.</li>
-					<li class="fragment"><strong>IMO 2025:</strong> OpenAI and Google DeepMind systems solved five of six problems, reaching gold-medal level in natural language.</li>
-					<li class="fragment"><strong>IMO 2026:</strong> GPT-5.6 solved all six problems without human steering.</li>
-					<li class="fragment">Progress has moved from benchmark mathematics to autonomous contributions at the research frontier.</li>
-				</ul>
+			<section data-background-image="lake.jpg">
+				<h2 style="color:magenta">Snapshot (July 2026):</h2>
+				<h2 style="color:magenta">Artificial Intelligence</h2>
+				<h2 style="color:magenta">versus</h2>
+				<h2 style="color:magenta">Mathematicians</h2>
 			</section>
 
 			<section data-background-color="#243447">
-				<h4>From Problem Solving to Mathematical Research</h4>
 				<ul>
-					<li>AI systems now combine long-horizon reasoning, parallel exploration, computation, literature use, and formal verification.</li>
-					<li class="fragment">They can search for constructions and counterexamples, not merely prove a supplied statement.</li>
-					<li class="fragment">They have solved or made progress on many open problems, sometimes finding connections specialists did not anticipate.</li>
-					<li class="fragment">Two striking 2026 examples are the Erdős unit-distance conjecture and the Cycle Double Cover Conjecture.</li>
+					<li>AI systems now combine long-horizon reasoning, parallel exploration, computation, literature
+						use, and formal verification.</li>
+					<li class="fragment">They can search for constructions and counterexamples, not merely prove a
+						supplied statement.</li>
+					<li class="fragment">They have solved or made progress on many open problems, sometimes finding
+						connections specialists did not anticipate.</li>
+					<li class="fragment">Striking 2026 examples are the Erdős unit-distance conjecture, the Cycle Double
+						Cover Conjecture and the counterexample to the Jacobian Conjecture.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#243447">
 				<h4>Disproving Erdős's Unit-Distance Conjecture</h4>
-				<ul style="font-size:0.82em;">
+				<ul style="font-size:0.72em;">
 					<li>Let \(u(n)\) be the maximum number of unit-distance pairs among \(n\) points in the plane.</li>
-					<li class="fragment">Erdős's lattice construction gave lower bounds of the form \(n^{1+o(1)}\); he conjectured that \(u(n)=n^{1+o(1)}\).</li>
+					<li class="fragment">Erdős's lattice construction gave lower bounds of the form \(n^{1+o(1)}\); he
+						conjectured that \(u(n)=n^{1+o(1)}\).</li>
 					<li class="fragment">An OpenAI model constructed infinitely many configurations with
 						\[
-							u(n) \geq n^{1+\delta}
+						u(n) \geq n^{1+\delta}
 						\]
 						for a fixed \(\delta&gt;0\), disproving this conjecture.</li>
-					<li class="fragment">The key move replaces Gaussian integers by number fields with richer symmetries, using infinite class-field towers and Golod&ndash;Shafarevich theory.</li>
-					<li class="fragment"><q>This was a new and unexpected bridge from algebraic number theory to discrete geometry.</q></li>
+					<li class="fragment">The key move replaces Gaussian integers by number fields with richer
+						symmetries, using infinite class-field towers and Golod&ndash;Shafarevich theory.</li>
+					<li class="fragment">This was a new and unexpected bridge from algebraic number theory to discrete
+						geometry (quoting ChatGPT).</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#243447">
 				<h4>The Cycle Double Cover Conjecture</h4>
 				<ul style="font-size:0.82em;">
-					<li>Every finite bridgeless graph was conjectured to possess a multiset of cycles covering each edge exactly twice.</li>
-					<li class="fragment">A 2026 AI-generated proof first reduces to cubic graphs and chooses a nowhere-zero \(\mathbb F_2^3\)-flow.</li>
-					<li class="fragment">Each edge receives a two-element subset of \(\mathbb F_2^3\); locally, every label must occur zero or twice at each vertex.</li>
-					<li class="fragment">The local assignments are made globally consistent by solving a linear system, with solvability proved by duality.</li>
-					<li class="fragment">The resulting proof is only three pages: a striking new encoding and reduction built from established flow theory and linear algebra.</li>
+					<li>Every finite bridgeless graph was conjectured to possess a multiset of cycles covering each edge
+						exactly twice.</li>
+					<li class="fragment">A 2026 AI-generated proof first reduces to cubic graphs and chooses a
+						nowhere-zero \(\mathbb F_2^3\)-flow.</li>
+					<li class="fragment">Each edge receives a two-element subset of \(\mathbb F_2^3\); locally, every
+						label must occur zero or twice at each vertex.</li>
+					<li class="fragment">The local assignments are made globally consistent by solving a linear system,
+						with solvability proved by duality.</li>
+					<li class="fragment">The resulting proof is only three pages: a striking new encoding and reduction
+						built from established flow theory and linear algebra.</li>
 				</ul>
 			</section>
 
@@ -164,8 +478,11 @@
 				<ul>
 					<li>AI can discover original constructions and pursue initially implausible directions.</li>
 					<li class="fragment">It can make unexpected connections between distant fields.</li>
-					<li class="fragment">It can coordinate many exploratory approaches and compress the successful path into a short proof.</li>
-					<li class="fragment">Thus, the remaining human advantage cannot simply be described as <em>creativity</em> or <em>originality</em>.</li>
+					<li class="fragment">It can coordinate many exploratory approaches and compress the successful path
+						into a short proof.</li>
+					<li class="fragment">Thus, the remaining human advantage cannot simply be described as
+						<em>creativity</em> or <em>originality</em>.
+					</li>
 				</ul>
 			</section>
 
@@ -173,11 +490,14 @@
 				<h4>Where is AI Still Behind?</h4>
 				<ul>
 					<li>AI can now solve the hardest competition problems and important open research problems.</li>
-					<li class="fragment">The remaining gap is not simply <em>originality</em>: recent AI proofs contain genuinely new constructions, reductions, and unexpected connections.</li>
+					<li class="fragment">The remaining gap is not simply <em>originality</em>: recent AI proofs contain
+						genuinely new constructions, reductions, and unexpected connections.</li>
 					<li class="fragment">Two clearer gaps are:
 						<ul>
-							<li><strong>Scale:</strong> maintaining a coherent programme across many papers and hundreds of pages.</li>
-							<li><strong>New mathematical technologies:</strong> inventing objects and methods that reorganize a field.</li>
+							<li><strong>Scale:</strong> maintaining a coherent programme across many papers and hundreds
+								of pages.</li>
+							<li><strong>New mathematical technologies:</strong> inventing objects and methods that
+								reorganize a field.</li>
 						</ul>
 					</li>
 				</ul>
@@ -187,16 +507,37 @@
 				<h4>Degrees of Mathematical Novelty</h4>
 				<table style="font-size:0.65em;">
 					<thead>
-						<tr><th>Level</th><th>What is new?</th><th>Example</th></tr>
+						<tr>
+							<th>Level</th>
+							<th>What is new?</th>
+							<th>Example</th>
+						</tr>
 					</thead>
 					<tbody>
-						<tr><td>I</td><td>Local lemma, construction, encoding, or estimate</td><td>Cycle-double-cover set labelling</td></tr>
-						<tr><td>II</td><td>Unexpected bridge or reusable proof method</td><td>Class-field towers for unit distances</td></tr>
-						<tr><td>III</td><td>New invariant, canonical object, or calculus</td><td>Floer homology; SLE</td></tr>
-						<tr><td>IV</td><td>Language or worldview reorganizing several areas</td><td>Schemes; Thurston geometrization</td></tr>
+						<tr>
+							<td>I</td>
+							<td>Local lemma, construction, encoding, or estimate</td>
+							<td>Cycle-double-cover set labelling</td>
+						</tr>
+						<tr>
+							<td>II</td>
+							<td>Unexpected bridge or reusable proof method</td>
+							<td>Class-field towers for unit distances</td>
+						</tr>
+						<tr>
+							<td>III</td>
+							<td>New invariant, canonical object, or calculus</td>
+							<td>Floer homology; SLE</td>
+						</tr>
+						<tr>
+							<td>IV</td>
+							<td>Language or worldview reorganizing several areas</td>
+							<td>Schemes; Thurston geometrization</td>
+						</tr>
 					</tbody>
 				</table>
-				<p class="fragment" style="font-size:0.75em;">Current AI has clearly reached Levels I and II. There is not yet a convincing autonomous Level III example.</p>
+				<p class="fragment" style="font-size:0.75em;">Current AI has clearly reached Levels I and II. There is
+					not yet a convincing autonomous Level III example.</p>
 			</section>
 
 			<section data-background-color="#243447">
@@ -222,22 +563,33 @@
 			<section data-background-color="#243447">
 				<h4>Human Invention: New Geometric Objects</h4>
 				<ul style="font-size:0.82em;">
-					<li><strong>Gromov: pseudoholomorphic curves.</strong> Replace integrable complex structures by tame almost-complex structures and study \(J\)-holomorphic curves.</li>
-					<li class="fragment">This created moduli spaces sensitive to symplectic rigidity, leading to non-squeezing, Gromov&ndash;Witten invariants, Floer theory, and much of contact topology.</li>
-					<li class="fragment"><strong>Schramm: SLE.</strong> Encode a random planar interface by the Loewner equation; conformal invariance and the domain Markov property force a Brownian driving process.</li>
-					<li class="fragment">A two-dimensional random curve becomes a one-dimensional stochastic process, giving a common proof technology for scaling limits in statistical mechanics.</li>
+					<li><strong>Gromov: pseudoholomorphic curves.</strong> Replace integrable complex structures by tame
+						almost-complex structures and study \(J\)-holomorphic curves.</li>
+					<li class="fragment">This created moduli spaces sensitive to symplectic rigidity, leading to
+						non-squeezing, Gromov&ndash;Witten invariants, Floer theory, and much of contact topology.</li>
+					<li class="fragment"><strong>Schramm: SLE.</strong> Encode a random planar interface by the Loewner
+						equation; conformal invariance and the domain Markov property force a Brownian driving process.
+					</li>
+					<li class="fragment">A two-dimensional random curve becomes a one-dimensional stochastic process,
+						giving a common proof technology for scaling limits in statistical mechanics.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#243447">
 				<h4>Other Field-Creating Technologies</h4>
 				<ul style="font-size:0.78em;">
-					<li><strong>Donaldson:</strong> moduli spaces of anti-self-dual connections as invariants of smooth four-manifolds.</li>
-					<li class="fragment"><strong>Floer:</strong> infinite-dimensional Morse theory, with differentials defined by counting PDE trajectories.</li>
-					<li class="fragment"><strong>Thurston:</strong> hyperbolic structures, laminations, train tracks, Dehn surgery, and geometrization as a new view of 3-manifolds.</li>
-					<li class="fragment"><strong>Cohen:</strong> forcing as a reusable machine for constructing new universes of set theory.</li>
-					<li class="fragment"><strong>Scholze:</strong> perfectoid spaces and tilting between characteristic zero and characteristic \(p\).</li>
-					<li class="fragment"><strong>Hairer:</strong> regularity structures as a calculus for singular stochastic PDEs.</li>
+					<li><strong>Donaldson:</strong> moduli spaces of anti-self-dual connections as invariants of smooth
+						four-manifolds.</li>
+					<li class="fragment"><strong>Floer:</strong> infinite-dimensional Morse theory, with differentials
+						defined by counting PDE trajectories.</li>
+					<li class="fragment"><strong>Thurston:</strong> hyperbolic structures, laminations, train tracks,
+						Dehn surgery, and geometrization as a new view of 3-manifolds.</li>
+					<li class="fragment"><strong>Cohen:</strong> forcing as a reusable machine for constructing new
+						universes of set theory.</li>
+					<li class="fragment"><strong>Scholze:</strong> perfectoid spaces and tilting between characteristic
+						zero and characteristic \(p\).</li>
+					<li class="fragment"><strong>Hairer:</strong> regularity structures as a calculus for singular
+						stochastic PDEs.</li>
 				</ul>
 			</section>
 
@@ -245,39 +597,100 @@
 				<h4>The Serre Conjecture Proof</h4>
 				<ul style="font-size:0.82em;">
 					<li>Khare&ndash;Wintenberger move through compatible systems and residual characteristics.</li>
-					<li class="fragment">They combine weight reduction, killing ramification, good-dihedral primes, and modularity-lifting theorems.</li>
-					<li class="fragment">The global architecture is a double induction on level complexity and residual characteristic/weight.</li>
-					<li class="fragment">This is a profound new <em>route through existing technologies</em>, rather than a new kind of object comparable to SLE or pseudoholomorphic curves.</li>
-					<li class="fragment">It is therefore qualitatively closer to the strongest work AI has already demonstrated.</li>
+					<li class="fragment">They combine weight reduction, killing ramification, good-dihedral primes, and
+						modularity-lifting theorems.</li>
+					<li class="fragment">The global architecture is a double induction on level complexity and residual
+						characteristic/weight.</li>
+					<li class="fragment">This is a profound new <em>route through existing technologies</em>, rather
+						than a new kind of object comparable to SLE or pseudoholomorphic curves.</li>
+					<li class="fragment">It is therefore qualitatively closer to the strongest work AI has already
+						demonstrated.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#243447">
 				<h4>How Often Do Humans Invent New Technologies?</h4>
 				<table style="font-size:0.66em;">
-					<thead><tr><th>Innovation</th><th>Across mathematics</th><th>In topology</th></tr></thead>
+					<thead>
+						<tr>
+							<th>Innovation</th>
+							<th>Across mathematics</th>
+							<th>In topology</th>
+						</tr>
+					</thead>
 					<tbody>
-						<tr><td>New local construction</td><td>Hundreds per year</td><td>Tens per year</td></tr>
-						<tr><td>Reusable method or bridge</td><td>About 10&ndash;30 per year</td><td>About 1&ndash;5 per year</td></tr>
-						<tr><td>Technology sustaining a research programme</td><td>About 1&ndash;3 per year</td><td>One every 3&ndash;7 years</td></tr>
-						<tr><td>Field-reorganizing language</td><td>About 1&ndash;3 per decade</td><td>One every 10&ndash;20 years</td></tr>
+						<tr>
+							<td>New local construction</td>
+							<td>Hundreds per year</td>
+							<td>Tens per year</td>
+						</tr>
+						<tr>
+							<td>Reusable method or bridge</td>
+							<td>About 10&ndash;30 per year</td>
+							<td>About 1&ndash;5 per year</td>
+						</tr>
+						<tr>
+							<td>Technology sustaining a research programme</td>
+							<td>About 1&ndash;3 per year</td>
+							<td>One every 3&ndash;7 years</td>
+						</tr>
+						<tr>
+							<td>Field-reorganizing language</td>
+							<td>About 1&ndash;3 per decade</td>
+							<td>One every 10&ndash;20 years</td>
+						</tr>
 					</tbody>
 				</table>
-				<p class="fragment" style="font-size:0.68em;">These are retrospective, order-of-magnitude estimates: a technology is recognized by the mathematics it later generates.</p>
+				<p class="fragment" style="font-size:0.68em;">These are retrospective, order-of-magnitude estimates: a
+					technology is recognized by the mathematics it later generates.</p>
 			</section>
 
 			<section data-background-color="#243447">
 				<h4>Tentative Field Dependence (GPT-5.6Sol)</h4>
 				<table style="font-size:0.6em;">
-					<thead><tr><th>Area</th><th>Amenability</th><th>Main obstruction</th></tr></thead>
+					<thead>
+						<tr>
+							<th>Area</th>
+							<th>Amenability</th>
+							<th>Main obstruction</th>
+						</tr>
+					</thead>
 					<tbody>
-						<tr><td>Finite combinatorics / algebra</td><td>Very high</td><td>Choosing constructions and invariants</td></tr>
-						<tr><td>Logic / formal foundations</td><td>High</td><td>Metatheory and long definitions</td></tr>
-						<tr><td>Number theory / algebraic geometry</td><td>Medium&ndash;high</td><td>Deep dependencies; local/global compatibility</td></tr>
-						<tr><td>Low-dimensional topology</td><td>Medium</td><td>Representation changes and diagrammatic moves</td></tr>
-						<tr><td>Analysis / probability</td><td>Medium&ndash;low</td><td>Finding norms, scales, couplings, and estimates</td></tr>
-						<tr><td>PDE / geometric analysis</td><td>Lower at present</td><td>Multiscale behaviour and singular limits</td></tr>
-						<tr><td>Applied mathematics / physics</td><td>Lower without tools</td><td>Choosing and grounding the model</td></tr>
+						<tr>
+							<td>Finite combinatorics / algebra</td>
+							<td>Very high</td>
+							<td>Choosing constructions and invariants</td>
+						</tr>
+						<tr>
+							<td>Logic / formal foundations</td>
+							<td>High</td>
+							<td>Metatheory and long definitions</td>
+						</tr>
+						<tr>
+							<td>Number theory / algebraic geometry</td>
+							<td>Medium&ndash;high</td>
+							<td>Deep dependencies; local/global compatibility</td>
+						</tr>
+						<tr>
+							<td>Low-dimensional topology</td>
+							<td>Medium</td>
+							<td>Representation changes and diagrammatic moves</td>
+						</tr>
+						<tr>
+							<td>Analysis / probability</td>
+							<td>Medium&ndash;low</td>
+							<td>Finding norms, scales, couplings, and estimates</td>
+						</tr>
+						<tr>
+							<td>PDE / geometric analysis</td>
+							<td>Lower at present</td>
+							<td>Multiscale behaviour and singular limits</td>
+						</tr>
+						<tr>
+							<td>Applied mathematics / physics</td>
+							<td>Lower without tools</td>
+							<td>Choosing and grounding the model</td>
+						</tr>
 					</tbody>
 				</table>
 			</section>
@@ -287,21 +700,28 @@
 				<h4>Lean and the Remaining Limitations</h4>
 				<ul>
 					<li>Lean is more than a final proof checker.</li>
-					<li class="fragment">It provides an interactive mathematical environment with exact state, legal actions, and kernel-checked success.</li>
-					<li class="fragment">Autoformalization connects the informal mathematical world&mdash;where ideas are generated&mdash;to this verified environment.</li>
-					<li class="fragment">Its effect is strongest on <strong>accuracy, autonomy, and scale</strong>, and more indirect on <strong>new concepts and geometric intuition</strong>.</li>
+					<li class="fragment">It provides an interactive mathematical environment with exact state, legal
+						actions, and kernel-checked success.</li>
+					<li class="fragment">Autoformalization connects the informal mathematical world&mdash;where ideas
+						are generated&mdash;to this verified environment.</li>
+					<li class="fragment">Its effect is strongest on <strong>accuracy, autonomy, and scale</strong>, and
+						more indirect on <strong>new concepts and geometric intuition</strong>.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#4a235a">
 				<h4>Accuracy: What Lean Guarantees</h4>
 				<ul style="font-size:0.84em;">
-					<li>Lean prevents invalid deductions, missing hypotheses, quantifier errors, type mismatches, and circular dependencies.</li>
-					<li class="fragment">Failures are localized at the first invalid interface instead of propagating through a long proof.</li>
+					<li>Lean prevents invalid deductions, missing hypotheses, quantifier errors, type mismatches, and
+						circular dependencies.</li>
+					<li class="fragment">Failures are localized at the first invalid interface instead of propagating
+						through a long proof.</li>
 					<li class="fragment">But Lean proves the <em>formal statement supplied to it</em>.</li>
-					<li class="fragment">It does not by itself guarantee that the statement, definitions, or axioms faithfully express the intended mathematics.</li>
+					<li class="fragment">It does not by itself guarantee that the statement, definitions, or axioms
+						faithfully express the intended mathematics.</li>
 				</ul>
-				<p class="fragment" style="color:#fffdd0; font-size:0.78em;">Kernel correctness must be combined with semantic auditing of autoformalization.</p>
+				<p class="fragment" style="color:#fffdd0; font-size:0.78em;">Kernel correctness must be combined with
+					semantic auditing of autoformalization.</p>
 			</section>
 
 			<section data-background-color="#4a235a">
@@ -316,19 +736,25 @@
 				<ul style="font-size:0.82em;">
 					<li>The second arrow has a kernel-checkable success criterion; the first does not.</li>
 					<li class="fragment">A mistranslated theorem can have a completely correct Lean proof.</li>
-					<li class="fragment">Useful safeguards include back-translation, examples and counterexamples, hypothesis mutation, and independent formalizations.</li>
-					<li class="fragment">Human attention can then focus on principal definitions and statements rather than every inferential step.</li>
+					<li class="fragment">Useful safeguards include back-translation, examples and counterexamples,
+						hypothesis mutation, and independent formalizations.</li>
+					<li class="fragment">Human attention can then focus on principal definitions and statements rather
+						than every inferential step.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="#4a235a">
 				<h4>Autonomy: Lean as Feedback</h4>
-				<p style="font-size:0.9em; color:#fffdd0;">propose &rarr; elaborate &rarr; inspect goals &rarr; repair &rarr; verify</p>
-				<ul>
-					<li class="fragment">Every proof state exposes the exact goal, local hypotheses, available premises, and remaining subgoals.</li>
+				<p style="font-size:0.9em; color:#fffdd0;">propose &rarr; elaborate &rarr; inspect goals &rarr; repair
+					&rarr; verify</p>
+				<ul style="font-size:0.9em;">
+					<li class="fragment">Every proof state exposes the exact goal, local hypotheses, available premises,
+						and remaining subgoals.</li>
 					<li class="fragment">AI can reject incorrect attempts without asking a human to read them.</li>
-					<li class="fragment">Formal theorem proving becomes a search or reinforcement-learning environment with an exact reward.</li>
-					<li class="fragment">This reduces dependence on human proof checking, but not on judgement about which goals and definitions matter.</li>
+					<li class="fragment">Formal theorem proving becomes a search or reinforcement-learning environment
+						with an exact reward.</li>
+					<li class="fragment">This reduces dependence on human proof checking, but not on judgement about
+						which goals and definitions matter.</li>
 				</ul>
 			</section>
 
@@ -336,27 +762,53 @@
 				<h4>Scale: Persistent Verified Mathematics</h4>
 				<ul style="font-size:0.84em;">
 					<li><strong>Exact memory:</strong> a proved theorem retains its statement and dependencies.</li>
-					<li class="fragment"><strong>Abstraction boundaries:</strong> later work depends on verified interfaces, not hidden proof details.</li>
-					<li class="fragment"><strong>Parallel decomposition:</strong> agents can prove separate lemmas that compose only when their types match.</li>
-					<li class="fragment"><strong>Refactoring:</strong> changing a definition reveals precisely which downstream results break.</li>
-					<li class="fragment"><strong>Retrieval:</strong> theorem types and dependency graphs supplement linguistic similarity.</li>
+					<li class="fragment"><strong>Abstraction boundaries:</strong> later work depends on verified
+						interfaces, not hidden proof details.</li>
+					<li class="fragment"><strong>Parallel decomposition:</strong> agents can prove separate lemmas that
+						compose only when their types match.</li>
+					<li class="fragment"><strong>Refactoring:</strong> changing a definition reveals precisely which
+						downstream results break.</li>
+					<li class="fragment"><strong>Retrieval:</strong> theorem types and dependency graphs supplement
+						linguistic similarity.</li>
 				</ul>
-				<p class="fragment" style="font-size:0.72em;">The cost is formalization overhead and the need to build missing domain libraries.</p>
+				<p class="fragment" style="font-size:0.72em;">The cost is formalization overhead and the need to build
+					missing domain libraries.</p>
 			</section>
 
 			<section data-background-color="#4a235a">
 				<h4>Expected Impact</h4>
 				<table style="font-size:0.68em;">
-					<thead><tr><th>Limitation</th><th>Effect of Lean integration</th></tr></thead>
+					<thead>
+						<tr>
+							<th>Limitation</th>
+							<th>Effect of Lean integration</th>
+						</tr>
+					</thead>
 					<tbody>
-						<tr><td>Deductive accuracy</td><td>Very large after faithful formalization</td></tr>
-						<tr><td>Autonomous verification</td><td>Large: exact closed-loop feedback</td></tr>
-						<tr><td>Long-term scale</td><td>Potentially very large: verified modular memory</td></tr>
-						<tr><td>Geometric intuition</td><td>Indirect; needs diagrams, DSLs, and world models</td></tr>
-						<tr><td>New proof techniques</td><td>Helps testing and refinement more than initial invention</td></tr>
+						<tr>
+							<td>Deductive accuracy</td>
+							<td>Very large after faithful formalization</td>
+						</tr>
+						<tr>
+							<td>Autonomous verification</td>
+							<td>Large: exact closed-loop feedback</td>
+						</tr>
+						<tr>
+							<td>Long-term scale</td>
+							<td>Potentially very large: verified modular memory</td>
+						</tr>
+						<tr>
+							<td>Geometric intuition</td>
+							<td>Indirect; needs diagrams, DSLs, and world models</td>
+						</tr>
+						<tr>
+							<td>New proof techniques</td>
+							<td>Helps testing and refinement more than initial invention</td>
+						</tr>
 					</tbody>
 				</table>
-				<p class="fragment" style="font-size:0.72em;">Lean is not a substitute for mathematical exploration; it is the substrate on which autonomous exploration can accumulate reliably.</p>
+				<p class="fragment" style="font-size:0.72em;">Lean is not a substitute for mathematical exploration; it
+					is the substrate on which autonomous exploration can accumulate reliably.</p>
 			</section>
 
 
@@ -415,26 +867,32 @@
 			<section data-background-color="teal">
 				<h4>Global Steps: Document to Json</h4>
 				<ul>
-					<li class="fragment">We start with a document containing the theorem statement and proof, or just with a statement and get AI to generate the proof.</li>
+					<li class="fragment">We start with a document containing the theorem statement and proof, or just
+						with a statement and get AI to generate the proof.</li>
 					<li class="fragment">The proof is written/rewritten in a formalization-friendly style.</li>
-					<li class="fragment">The document is scrutinized by an LLM/agent (like Codex) based on detailed instructions about common mathematical errors and stress-tests.</li>
+					<li class="fragment">The document is scrutinized by an LLM/agent (like Codex) based on detailed
+						instructions about common mathematical errors and stress-tests.</li>
 					</li>
-					<li class="fragment">An agentic framework (itself vibe-coded) then generates JSON iteratively based on detailed schemas.</li>
+					<li class="fragment">An agentic framework (itself vibe-coded) then generates JSON iteratively based
+						on detailed schemas.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="teal">
 				<h4>Combinatory Code Generation</h4>
 				<ul>
-					<li class="fragment">Code generation is done recursively putting together code generation functions that take in JSON and output Syntax.</li>
+					<li class="fragment">Code generation is done recursively putting together code generation functions
+						that take in JSON and output Syntax.</li>
 					<li class="fragment">A function <code>getCode</code> combines these.
-					<pre>
+						<pre>
 						<code class="language-lean">partial def getCode  (translator: CodeGenerator) (goal? : Option MVarId) 
     (kind: SyntaxNodeKinds) (source: Json) : 
 			TranslateM (Option (TSyntax kind)) := 
 							</code>
-					</pre></li>
-					<li class="fragment">The code generation functions can call <code>getCode</code> for recursive code generation.</li>
+					</pre>
+					</li>
+					<li class="fragment">The code generation functions can call <code>getCode</code> for recursive code
+						generation.</li>
 				</ul>
 			</section>
 
@@ -461,7 +919,8 @@
     | apply existsUnique_of_exists_of_unique; repeat (assumption)
     | grind
 	</code>
-	</pre>			</section>
+	</pre>
+			</section>
 			<section data-background-color="teal">
 				<h4>JSON Representation: : Uniqueness of Additive Identity</h4>
 				<pre><code class="language-json">{
@@ -587,7 +1046,8 @@
       done
     done
 	</code>
-	</pre>			</section>
+	</pre>
+			</section>
 			<section data-background-color="teal">
 				<h4>JSON Representation: : Inductive Proof</h4>
 				<pre><code class="language-json">{
@@ -691,35 +1151,98 @@
 				<ul>
 					<li>The function <code>getCode</code> is called on the JSON representation of the proof step.</li>
 					<li class="fragment">This calls code generation functions based on the "type" field in the JSON,
-						with code generation functions labelled by an <em>attribute</em> adding them to a scoped <em>environment extension</em>.
+						with code generation functions labelled by an <em>attribute</em> adding them to a scoped
+						<em>environment extension</em>.
 						<pre><code class="language-lean">@[codegen "induction_proof"]
 def inductionCode (translator : CodeGenerator := {}) : 
 	Option MVarId →  (kind: SyntaxNodeKinds) → Json → 
 		TranslateM (Option (TSyntax kind))
 | some goal, ``tacticSeq, js => ...</code></pre>
 					</li>
-					<li class="fragment">Code generation functions have access to a <em>translator</em> that translates theorems statements and definitions and can call <code>getCode</code>.</li>
+					<li class="fragment">Code generation functions have access to a <em>translator</em> that translates
+						theorems statements and definitions and can call <code>getCode</code>.</li>
 				</ul>
 			</section>
 
 			<section data-background-color="teal">
 				<h4>LeanAide: Advantages</h4>
 				<ul>
-					<li class="fragment">There are many powerful Autoformalization systems  such as Aristotle, Gauss and AxiomProver.
+					<li class="fragment">There are many powerful Autoformalization systems such as Aristotle, Gauss and
+						AxiomProver.
 					</li>
 					<li class="fragment">Coding agents and LLMs have also become good at generating Lean code. </li>
 					<li class="fragment">However, the nature of LeanAide has advantages:
 						<ul>
-							<li class="fragment">It is extensible and customizable, including incorporating custom tactics.</li>
+							<li class="fragment">It is extensible and customizable, including incorporating custom
+								tactics.</li>
 							<li class="fragment">It can be scaled to larger proofs.</li>
 							<li class="fragment">The generated Lean code is of good quality.</li>
-							<li class="fragment">Improvements in proof automation and LLMs lead to automatic improvements.</li>
+							<li class="fragment">Improvements in proof automation and LLMs lead to automatic
+								improvements.</li>
 						</ul>
 					</li>
 				</ul>
 			</section>
 
-		<section data-background-image="Vidit_Nanda_Leiden.png" data-background-size="contain"></section>
+			<section data-background-image="sea.jpg">
+				<h1>The Future of Mathematics?</h1>
+			</section>
+
+			<section>
+				<ul>
+					<li>The rise of Artificial Intelligence in mathematics can cause trouble for:
+						<ul>
+							<li>Training.</li>
+							<li>Evaluation.</li>
+							<li>Publication and refereeing.</li>
+							<li>(Public) funding.</li>
+						</ul></li>
+
+					<li class="fragment">The consensus response seems to be the <em>Leiden declaration</em>, which was endorsed by the International Mathematical Union (IMU).</li>
+					<li class="fragment">There are however notable dissenting opinions, such as that of Timothy Gowers.</li>
+				</ul>
+			</section>
+
+			<section data-background-image="Vidit_Nanda_Leiden.png" data-background-size="contain"></section>
+
+			<section>
+				<ul>
+					<li>Knowledge beyond a cataloguing of facts depends on <strong>abstraction</strong>, i.e., the hiding away of details that are not relevant to what we seek to understand and considering only the essential features.</li>
+
+					<li class="fragment">For example, when studying a point-mass in mechanics we ignore the colour.</li>
+					<li class="fragment">Abstraction is done explicitly in working with modular systems in engineering, for instance in software engineering.
+					</li>
+
+					<li class="fragment">In all these cases, we abstract by specifying the properties of our system that we are concerned with and studying the system (or its idealised version) in terms of those properties.</li>
+
+				</ul>
+			</section>
+			<section>
+				<ul>
+					<li>In mathematics, we turn things on their head and consider <em>fully abstracted systems</em>.</li>
+
+					<li class="fragment">Thus, rather than saying that we study systems in terms of the properties of their idealised, abstracted forms, we define our objects of study as those satisfying some properties (or axioms) and think of these as real objects.</li>
+					<li class="fragment">Going further, we consider common abstractions across a range of (perhaps already abstract) systems, building towers of abstractions.
+					</li>
+
+					<li class="fragment">From this viewpoint, the value of a piece of mathematics is a balance between proximity to the empirical and its depth, generality etc.</li>
+
+				</ul>
+			</section>
+
+			<section>
+				<ul>
+					<li>Thus, mathematics (with proofs) can be applied to those aspects of science/engineering that can be abstracted.</li>
+
+					<li class="fragment">However, in many cases alternatives to proofs - numerics, simulation, heuristics - are used.</li>
+					<li class="fragment">In some cases (such as software verification) this is because the mathematics is tedious and labour-intensive; in others it is too hard.
+					</li>
+
+					<li class="fragment">With the help of AI, we can automated the tedious, and, one hopes, make feasible the difficult.</li>
+
+				</ul>
+			</section>
+
 
 		</section>
 	</div>

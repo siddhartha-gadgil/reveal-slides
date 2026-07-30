@@ -81,6 +81,204 @@
 				</ul>
 			</section>
 
+			<section data-background-color="#123b4a">
+				<h4>AI Mathematics, 2022&ndash;2026: A Mechanism Timeline</h4>
+				<table style="font-size:0.52em;">
+					<thead>
+						<tr>
+							<th>Rough date</th>
+							<th>System advance</th>
+							<th>Mathematical signal</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Nov 2022</td><td>ChatGPT: general conversational foundation model</td><td>Fluent mathematical dialogue, but unreliable proofs</td></tr>
+						<tr><td>Mar&ndash;Nov 2023</td><td>GPT-4; browser, Python, retrieval and function calling</td><td>Models can calculate, search and check examples</td></tr>
+						<tr><td>Jan&ndash;Jul 2024</td><td>Neuro-symbolic search and formal proof</td><td>IMO silver: 28/42</td></tr>
+						<tr><td>Sep&ndash;Dec 2024</td><td>o1/o3: reasoning trained with test-time compute</td><td>A new scaling axis for hard mathematics</td></tr>
+						<tr><td>Early&ndash;Jul 2025</td><td>Tool-using reasoners and agent infrastructure</td><td>IMO gold: 35/42, in natural language</td></tr>
+						<tr><td>Aug&ndash;Dec 2025</td><td>Foundation and reasoning models become one routed system</td><td>Longer, more reliable research workflows</td></tr>
+						<tr><td>Feb&ndash;Jul 2026</td><td>Long-horizon and parallel research agents</td><td>Open problems; reported IMO 42/42</td></tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/chatgpt/</li>
+						<li>https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/</li>
+						<li>https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Nov 2022&ndash;2023: Language Models Acquire Tools</h4>
+				<ul style="font-size:0.82em;">
+					<li><strong>November 2022:</strong> ChatGPT made instruction-following language models widely usable.</li>
+					<li class="fragment"><strong>March 2023:</strong> GPT-4 improved abstract reasoning; ChatGPT plugins added a browser, retrieval and a sandboxed Python interpreter.</li>
+					<li class="fragment"><strong>June&ndash;November 2023:</strong> function calling and the Assistants API made tool use programmable and repeatable.</li>
+					<li class="fragment">For mathematics, the model no longer had to do everything in its weights: it could calculate, enumerate cases, retrieve facts and test conjectures.</li>
+					<li class="fragment"><strong>But:</strong> tool calls were usually short and human-directed; there was no medal-level IMO result from a general-purpose model.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/chatgpt/</li>
+						<li>https://openai.com/index/gpt-4-research/</li>
+						<li>https://openai.com/index/chatgpt-plugins/</li>
+						<li>https://openai.com/index/function-calling-and-other-api-updates/</li>
+						<li>https://openai.com/index/new-models-and-developer-products-announced-at-devday/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>2024: Specialized Systems Reach IMO Silver</h4>
+				<ul style="font-size:0.81em;">
+					<li><strong>January:</strong> AlphaGeometry solved 25 of 30 historical Olympiad geometry problems by combining a language model with a symbolic deduction engine.</li>
+					<li class="fragment"><strong>July:</strong> AlphaProof and AlphaGeometry 2 solved four of six IMO problems for <strong>28/42</strong>, the silver-medal threshold.</li>
+					<li class="fragment">AlphaProof translated problems into Lean and used reinforcement learning to search for machine-checked proofs.</li>
+					<li class="fragment">This was a decisive reliability advance: the verifier rejected invalid proof steps exactly.</li>
+					<li class="fragment"><strong>Limitation:</strong> a specialized formal pipeline, expensive search and manual formalization&mdash;not yet a general mathematical conversationalist.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/</li>
+						<li>https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/</li>
+						<li>https://www.nature.com/articles/s41586-025-09833-y</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Sep&ndash;Dec 2024: Test-Time Compute Becomes a Scaling Axis</h4>
+				<ul style="font-size:0.82em;">
+					<li><strong>September:</strong> o1 was trained to reason through long chains before answering.</li>
+					<li class="fragment">Performance improved both with more reinforcement-learning compute and with more <strong>inference-time thinking</strong>.</li>
+					<li class="fragment"><strong>December:</strong> o1 Pro explicitly spent more compute on harder questions; o3 was previewed as the next reasoning generation.</li>
+					<li class="fragment">The conceptual shift: instead of asking only for a larger pretrained model, allocate adaptive compute to search, critique and revise a solution.</li>
+					<li class="fragment">This resembles giving a mathematician scratch time&mdash;though extra thought can still amplify a false premise.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/learning-to-reason-with-llms/</li>
+						<li>https://openai.com/index/introducing-chatgpt-pro/</li>
+						<li>https://openai.com/index/openai-o3-mini/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Early 2025: Reasoning, Tools and Agents Converge</h4>
+				<ul style="font-size:0.80em;">
+					<li><strong>January&ndash;March:</strong> Operator, deep research, the Responses API and Agents SDK made multi-step action loops practical.</li>
+					<li class="fragment"><strong>April:</strong> o3 and o4-mini could reason about when and how to use web search, Python, files and visual inputs.</li>
+					<li class="fragment">A tool call answers: <em>what computation should I run now?</em></li>
+					<li class="fragment">An agent loop additionally decides: <em>what subgoal comes next, what evidence is missing, and when should I retry or stop?</em></li>
+					<li class="fragment">For mathematics this enables experimental search, literature checking, counterexample hunting and independent verification inside one workflow.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/introducing-operator/</li>
+						<li>https://openai.com/index/introducing-deep-research/</li>
+						<li>https://openai.com/index/new-tools-for-building-agents/</li>
+						<li>https://openai.com/index/introducing-o3-and-o4-mini/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Jul&ndash;Dec 2025: IMO Gold and a Unified Model</h4>
+				<ul style="font-size:0.79em;">
+					<li><strong>July:</strong> OpenAI and DeepMind systems each solved five of six IMO problems for <strong>35/42</strong>&mdash;gold-medal level.</li>
+					<li class="fragment">Unlike the 2024 result, these were general-purpose reasoning models producing proofs in natural language.</li>
+					<li class="fragment"><strong>August:</strong> GPT-5 integrated a fast foundation model, deeper reasoning model and router into one system.</li>
+					<li class="fragment">Thus broad pretrained knowledge, deliberate reasoning and tool selection ceased to be separate user choices.</li>
+					<li class="fragment"><strong>December:</strong> GPT-5.2 strengthened long-context, tool-using work; with Python and maximum reasoning it scored 40.3% on FrontierMath Tiers 1&ndash;3.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/</li>
+						<li>https://www.reuters.com/world/asia-pacific/google-openais-ai-models-win-milestone-gold-global-math-competition-2025-07-21/</li>
+						<li>https://openai.com/index/introducing-gpt-5/</li>
+						<li>https://openai.com/index/introducing-gpt-5-2/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>Feb&ndash;Apr 2026: Agents Enter Research-Grade Mathematics</h4>
+				<ul style="font-size:0.78em;">
+					<li><strong>February:</strong> an internal model attempted all ten First Proof research problems; OpenAI judged at least five attempts likely correct after expert feedback.</li>
+					<li class="fragment">The workflow used long reasoning, retries, selection among attempts and a second model for checking and exposition&mdash;with limited human supervision.</li>
+					<li class="fragment"><strong>March:</strong> GPT-5.4 added native computer use and up to one million tokens of context, supporting persistent multi-stage work.</li>
+					<li class="fragment"><strong>April:</strong> an internal GPT-5.5 system with a custom harness helped discover a new proof about off-diagonal Ramsey numbers, later verified in Lean.</li>
+					<li class="fragment">The unit of capability was now <strong>model + memory + tools + verifier + orchestration</strong>, not the model alone.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/first-proof-submissions/</li>
+						<li>https://openai.com/index/introducing-gpt-5-4/</li>
+						<li>https://openai.com/index/introducing-gpt-5-5/</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>May&ndash;Jul 2026: Autonomous Mathematical Results</h4>
+				<ul style="font-size:0.78em;">
+					<li><strong>May:</strong> a general-purpose OpenAI model disproved the Erdős unit-distance conjecture using an unexpected bridge from algebraic number theory.</li>
+					<li class="fragment"><strong>July:</strong> GPT-5.6 Sol Ultra produced a proof of the Cycle Double Cover Conjecture using 64 parallel subagents; an independent exposition followed.</li>
+					<li class="fragment"><strong>IMO 2026:</strong> GPT-5.6 Pro was reported to solve all six problems on the first attempt without human steering: <strong>42/42</strong>.</li>
+					<li class="fragment">Parallel agents add a further test-time scaling axis: explore many proof plans, then synthesize the strongest line.</li>
+					<li class="fragment"><strong>Caution:</strong> IMO scores are clean tests of problem solving; research claims still require provenance, novelty checks and expert or formal verification.</li>
+				</ul>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/model-disproves-discrete-geometry-conjecture/</li>
+						<li>https://openai.com/index/gpt-5-6/</li>
+						<li>https://cdn.openai.com/pdf/04d1d1e4-bc75-476a-97cf-49055cd98d31/cdc_proof.pdf</li>
+						<li>https://arxiv.org/abs/2607.16356</li>
+						<li>https://www.linkedin.com/posts/akashnil-dutta-72894a100_imo-2026-performance-by-chatgpt-56-pro-activity-7483603460488273922-g1Yh</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section data-background-color="#123b4a">
+				<h4>What Actually Changed?</h4>
+				<table style="font-size:0.58em;">
+					<thead>
+						<tr><th>Advance</th><th>What it adds to mathematical work</th><th>Remaining failure mode</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Foundation-model scale</td><td>Language, concepts, analogies, literature priors</td><td>Fluent but brittle proof</td></tr>
+						<tr><td>Multimodality</td><td>Diagrams, handwritten work, geometric representations</td><td>Perception is not geometric understanding</td></tr>
+						<tr><td>Tools</td><td>Exact computation, search, experiments and retrieval</td><td>Bad questions produce irrelevant evidence</td></tr>
+						<tr><td>Formal verification</td><td>Local correctness and reusable proof objects</td><td>Autoformalization and library gaps</td></tr>
+						<tr><td>Test-time compute</td><td>Search, self-critique and revision</td><td>Cost; correlated errors</td></tr>
+						<tr><td>Unified routing</td><td>Matches effort and tools to each subproblem</td><td>Router can choose badly</td></tr>
+						<tr><td>Long-horizon agents</td><td>Decomposition, memory, retries and parallel proof plans</td><td>Global coherence, novelty and provenance</td></tr>
+					</tbody>
+				</table>
+				<p class="fragment" style="font-size:0.70em;"><strong>IMO progress measures the whole stack.</strong> It does not isolate the contribution of a larger model, more thinking time, tools, formalization or orchestration.</p>
+				<aside class="notes">
+					<p>[Sources]</p>
+					<ul>
+						<li>https://openai.com/index/hello-gpt-4o/</li>
+						<li>https://openai.com/index/learning-to-reason-with-llms/</li>
+						<li>https://openai.com/index/introducing-gpt-5/</li>
+						<li>https://openai.com/index/new-tools-for-building-agents/</li>
+						<li>https://www.nature.com/articles/s41586-025-09833-y</li>
+					</ul>
+				</aside>
+			</section>
+
 			<section data-background-color="#243447">
 				<h4>Rapid Progress in AI Mathematics</h4>
 				<ul>
@@ -539,7 +737,6 @@
 					<li class="fragment">We start with a document containing the theorem statement and proof, or just with a statement and get AI to generate the proof.</li>
 					<li class="fragment">The proof is written/rewritten in a formalization-friendly style.</li>
 					<li class="fragment">The document is scrutinized by an LLM/agent (like Codex) based on detailed instructions about common mathematical errors and stress-tests.</li>
-					</li>
 					<li class="fragment">An agentic framework (itself vibe-coded) then generates JSON iteratively based on detailed schemas.</li>
 				</ul>
 			</section>
