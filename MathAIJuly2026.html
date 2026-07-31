@@ -358,74 +358,6 @@
 				</aside>
 			</section>
 
-
-			<section data-background-image="hills.png"></section>
-
-
-			<section>
-				<ul>
-					<li>With a flood of AI generated proofs, checking them becomes a significant challenge.</li>
-
-					<li class="fragment">This was especially so for problems not significant enough to motivate others
-						to check.</li>
-					<li class="fragment">Fortunately the development of formal verification tools, specifically
-						<strong>Lean</strong> and <strong>Mathlib</strong>, has allowed checking to be reduced to
-						checking statements.
-					</li>
-
-					<li class="fragment">In many cases, AI can generate Lean proofs.</li>
-					<li class="fragment">For example, when I told it to use the online Lean server, ChatGPT
-						(GPT-5.6-Sol) one-shotted a Lean proof of the counterexample to the <strong>Jacobian
-							Conjecture</strong> in about 15 minutes.</li>
-
-				</ul>
-			</section>
-
-
-			<section>
-				<h4> Lean Prover</h4>
-				<ul>
-					<li class="fragment">Lean is a functional programming language with a fast runtime which is
-						self-hosting.</li>
-
-					<li class="fragment">The type system of Lean is based on the <em>Calculus of Inductive
-							Constructions</em> (CIC), which is a dependent type theory.</li>
-					<li class="fragment">This allows arbitrary mathematical statements to be expressed as types.</li>
-
-					<li class="fragment">Theorems and proofs thus are essentially definitions, with types representing
-						statements and values representing proofs.</li>
-
-				</ul>
-			</section>
-
-			<section>
-				<h4> Lean Prover</h4>
-				<ul>
-
-
-					<li class="fragment">Formalized proofs are verified by the <strong>Kernel</strong>, which is a
-						relatively small component. Lean also has independent kernels.</li>
-					<li class="fragment">Formalization in Lean gives not only guaranteed correctness but also modularity
-						with enforced
-						abstraction boundaries.</li>
-					<li class="fragment">Lean has a large and growing library of formalized mathematics, called
-						<strong>Mathlib</strong>.
-					</li>
-					</li>
-
-					<li class="fragment">There are also efforts to have much faster-growing vibe-coded libraries,
-						notably the <em>Tau Ceti</em> project.</li>
-
-				</ul>
-			</section>
-
-			<section data-background-image="lake.jpg">
-				<h2 style="color:magenta">Snapshot (July 2026):</h2>
-				<h2 style="color:magenta">Artificial Intelligence</h2>
-				<h2 style="color:magenta">versus</h2>
-				<h2 style="color:magenta">Mathematicians</h2>
-			</section>
-
 			<section data-background-color="#243447">
 				<ul>
 					<li>AI systems now combine long-horizon reasoning, parallel exploration, computation, literature
@@ -693,6 +625,66 @@
 						</tr>
 					</tbody>
 				</table>
+			</section>
+
+						<section data-background-image="hills.png"> <h1>LeanLang</h1> </section>
+
+
+			<section>
+				<ul>
+					<li>With a flood of AI generated proofs, checking them becomes a significant challenge.</li>
+
+					<li class="fragment">This was especially so for problems not significant enough to motivate others
+						to check.</li>
+					<li class="fragment">Fortunately the development of formal verification tools, specifically
+						<strong>Lean</strong> and <strong>Mathlib</strong>, has allowed checking to be reduced to
+						checking statements.
+					</li>
+
+					<li class="fragment">In many cases, AI can generate Lean proofs.</li>
+					<li class="fragment">For example, when I told it to use the online Lean server, ChatGPT
+						(GPT-5.6-Sol) one-shotted a Lean proof of the counterexample to the <strong>Jacobian
+							Conjecture</strong> in about 15 minutes.</li>
+
+				</ul>
+			</section>
+
+
+			<section>
+				<h4> Lean Prover</h4>
+				<ul>
+					<li class="fragment">Lean is a functional programming language with a fast runtime which is
+						self-hosting.</li>
+
+					<li class="fragment">The type system of Lean is based on the <em>Calculus of Inductive
+							Constructions</em> (CIC), which is a dependent type theory.</li>
+					<li class="fragment">This allows arbitrary mathematical statements to be expressed as types.</li>
+
+					<li class="fragment">Theorems and proofs thus are essentially definitions, with types representing
+						statements and values representing proofs.</li>
+
+				</ul>
+			</section>
+
+			<section>
+				<h4> Lean Prover</h4>
+				<ul>
+
+
+					<li class="fragment">Formalized proofs are verified by the <strong>Kernel</strong>, which is a
+						relatively small component. Lean also has independent kernels.</li>
+					<li class="fragment">Formalization in Lean gives not only guaranteed correctness but also modularity
+						with enforced
+						abstraction boundaries.</li>
+					<li class="fragment">Lean has a large and growing library of formalized mathematics, called
+						<strong>Mathlib</strong>.
+					</li>
+					</li>
+
+					<li class="fragment">There are also efforts to have much faster-growing vibe-coded libraries,
+						notably the <em>Tau Ceti</em> project.</li>
+
+				</ul>
 			</section>
 
 
