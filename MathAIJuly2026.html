@@ -696,126 +696,26 @@
 			</section>
 
 
-			<section data-background-color="#4a235a">
-				<h4>Lean and the Remaining Limitations</h4>
-				<ul>
-					<li>Lean is more than a final proof checker.</li>
-					<li class="fragment">It provides an interactive mathematical environment with exact state, legal
-						actions, and kernel-checked success.</li>
-					<li class="fragment">Autoformalization connects the informal mathematical world&mdash;where ideas
-						are generated&mdash;to this verified environment.</li>
-					<li class="fragment">Its effect is strongest on <strong>accuracy, autonomy, and scale</strong>, and
-						more indirect on <strong>new concepts and geometric intuition</strong>.</li>
-				</ul>
-			</section>
-
-			<section data-background-color="#4a235a">
-				<h4>Accuracy: What Lean Guarantees</h4>
-				<ul style="font-size:0.84em;">
-					<li>Lean prevents invalid deductions, missing hypotheses, quantifier errors, type mismatches, and
-						circular dependencies.</li>
-					<li class="fragment">Failures are localized at the first invalid interface instead of propagating
-						through a long proof.</li>
-					<li class="fragment">But Lean proves the <em>formal statement supplied to it</em>.</li>
-					<li class="fragment">It does not by itself guarantee that the statement, definitions, or axioms
-						faithfully express the intended mathematics.</li>
-				</ul>
-				<p class="fragment" style="color:#fffdd0; font-size:0.78em;">Kernel correctness must be combined with
-					semantic auditing of autoformalization.</p>
-			</section>
-
-			<section data-background-color="#4a235a">
-				<h4>Autoformalization: The Semantic Bottleneck</h4>
-				<p style="font-size:0.86em;">
-					Informal theorem
-					&nbsp;\(\longrightarrow\)&nbsp;
-					Formal statement
-					&nbsp;\(\longrightarrow\)&nbsp;
-					Formal proof
-				</p>
-				<ul style="font-size:0.82em;">
-					<li>The second arrow has a kernel-checkable success criterion; the first does not.</li>
-					<li class="fragment">A mistranslated theorem can have a completely correct Lean proof.</li>
-					<li class="fragment">Useful safeguards include back-translation, examples and counterexamples,
-						hypothesis mutation, and independent formalizations.</li>
-					<li class="fragment">Human attention can then focus on principal definitions and statements rather
-						than every inferential step.</li>
-				</ul>
-			</section>
-
-			<section data-background-color="#4a235a">
-				<h4>Autonomy: Lean as Feedback</h4>
-				<p style="font-size:0.9em; color:#fffdd0;">propose &rarr; elaborate &rarr; inspect goals &rarr; repair
-					&rarr; verify</p>
-				<ul style="font-size:0.9em;">
-					<li class="fragment">Every proof state exposes the exact goal, local hypotheses, available premises,
-						and remaining subgoals.</li>
-					<li class="fragment">AI can reject incorrect attempts without asking a human to read them.</li>
-					<li class="fragment">Formal theorem proving becomes a search or reinforcement-learning environment
-						with an exact reward.</li>
-					<li class="fragment">This reduces dependence on human proof checking, but not on judgement about
-						which goals and definitions matter.</li>
-				</ul>
-			</section>
-
-			<section data-background-color="#4a235a">
-				<h4>Scale: Persistent Verified Mathematics</h4>
-				<ul style="font-size:0.84em;">
-					<li><strong>Exact memory:</strong> a proved theorem retains its statement and dependencies.</li>
-					<li class="fragment"><strong>Abstraction boundaries:</strong> later work depends on verified
-						interfaces, not hidden proof details.</li>
-					<li class="fragment"><strong>Parallel decomposition:</strong> agents can prove separate lemmas that
-						compose only when their types match.</li>
-					<li class="fragment"><strong>Refactoring:</strong> changing a definition reveals precisely which
-						downstream results break.</li>
-					<li class="fragment"><strong>Retrieval:</strong> theorem types and dependency graphs supplement
-						linguistic similarity.</li>
-				</ul>
-				<p class="fragment" style="font-size:0.72em;">The cost is formalization overhead and the need to build
-					missing domain libraries.</p>
-			</section>
-
-			<section data-background-color="#4a235a">
-				<h4>Expected Impact</h4>
-				<table style="font-size:0.68em;">
-					<thead>
-						<tr>
-							<th>Limitation</th>
-							<th>Effect of Lean integration</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Deductive accuracy</td>
-							<td>Very large after faithful formalization</td>
-						</tr>
-						<tr>
-							<td>Autonomous verification</td>
-							<td>Large: exact closed-loop feedback</td>
-						</tr>
-						<tr>
-							<td>Long-term scale</td>
-							<td>Potentially very large: verified modular memory</td>
-						</tr>
-						<tr>
-							<td>Geometric intuition</td>
-							<td>Indirect; needs diagrams, DSLs, and world models</td>
-						</tr>
-						<tr>
-							<td>New proof techniques</td>
-							<td>Helps testing and refinement more than initial invention</td>
-						</tr>
-					</tbody>
-				</table>
-				<p class="fragment" style="font-size:0.72em;">Lean is not a substitute for mathematical exploration; it
-					is the substrate on which autonomous exploration can accumulate reliably.</p>
-			</section>
-
-
 			<section data-transition="zoom-in slide-out" data-background-image="campus.jpg">
 				<h1>LeanAide:</h1>
 				<h2>Combinatory Autoformalization with Agentic AI</h2>
 			</section>
+
+			<section data-background-color="teal">
+				<ul>
+					<li>AI systems have shown impressive capabilities in Mathematical reasoning.</li>
+					<li class="fragment">However, they still have (related) limitations:
+						<ul>
+							<li><strong>Accuracy</strong>: in mathematics errors cascade.</li>
+							<li><strong>Autonomy</strong>: as they need human verification.</li>
+							<li><strong>Scalability</strong>: limited by needing human guidance.</li>
+						</ul>
+					</li>
+					<li class="fragment">An approach is to use a <em>Formal Proof System</em> for verification, and <strong>Autoformalization</strong> as a bridge.</li>
+					<li class="fragment">Our system, <em>LeanAide</em>, follows a compositional approach to autoformalization.</li>
+				</ul>
+			</section>
+
 
 			<section data-background-color="teal">
 				<h4>AutoFormalization: Ingredients and Stages</h4>
@@ -858,7 +758,7 @@
 						that are closest to the statement (for OpenAI embeddings) and include them in the prompt.
 					</li>
 					<li class="fragment">We query GPT-4 with the prompt for (say) 10
-						responses.</li>
+						responses (update: GPT-5.6 for 4 responses).</li>
 					<li class="fragment">We discard responses that are not valid Lean code (do not parse or do not
 						elaborate).</li>
 				</ul>
