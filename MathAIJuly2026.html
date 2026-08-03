@@ -390,22 +390,6 @@
 			</section>
 
 			<section data-background-color="#243447">
-				<h4>The Cycle Double Cover Conjecture</h4>
-				<ul style="font-size:0.82em;">
-					<li>Every finite bridgeless graph was conjectured to possess a multiset of cycles covering each edge
-						exactly twice.</li>
-					<li class="fragment">A 2026 AI-generated proof first reduces to cubic graphs and chooses a
-						nowhere-zero \(\mathbb F_2^3\)-flow.</li>
-					<li class="fragment">Each edge receives a two-element subset of \(\mathbb F_2^3\); locally, every
-						label must occur zero or twice at each vertex.</li>
-					<li class="fragment">The local assignments are made globally consistent by solving a linear system,
-						with solvability proved by duality.</li>
-					<li class="fragment">The resulting proof is only three pages: a striking new encoding and reduction
-						built from established flow theory and linear algebra.</li>
-				</ul>
-			</section>
-
-			<section data-background-color="#243447">
 				<h4>What These Achievements Establish</h4>
 				<ul>
 					<li>AI can discover original constructions and pursue initially implausible directions.</li>
@@ -526,21 +510,6 @@
 			</section>
 
 			<section data-background-color="#243447">
-				<h4>The Serre Conjecture Proof</h4>
-				<ul style="font-size:0.82em;">
-					<li>Khare&ndash;Wintenberger move through compatible systems and residual characteristics.</li>
-					<li class="fragment">They combine weight reduction, killing ramification, good-dihedral primes, and
-						modularity-lifting theorems.</li>
-					<li class="fragment">The global architecture is a double induction on level complexity and residual
-						characteristic/weight.</li>
-					<li class="fragment">This is a profound new <em>route through existing technologies</em>, rather
-						than a new kind of object comparable to SLE or pseudoholomorphic curves.</li>
-					<li class="fragment">It is therefore qualitatively closer to the strongest work AI has already
-						demonstrated.</li>
-				</ul>
-			</section>
-
-			<section data-background-color="#243447">
 				<h4>How Often Do Humans Invent New Technologies?</h4>
 				<table style="font-size:0.66em;">
 					<thead>
@@ -577,55 +546,19 @@
 					technology is recognized by the mathematics it later generates.</p>
 			</section>
 
-			<section data-background-color="#243447">
-				<h4>Tentative Field Dependence (GPT-5.6Sol)</h4>
-				<table style="font-size:0.6em;">
-					<thead>
-						<tr>
-							<th>Area</th>
-							<th>Amenability</th>
-							<th>Main obstruction</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Finite combinatorics / algebra</td>
-							<td>Very high</td>
-							<td>Choosing constructions and invariants</td>
-						</tr>
-						<tr>
-							<td>Logic / formal foundations</td>
-							<td>High</td>
-							<td>Metatheory and long definitions</td>
-						</tr>
-						<tr>
-							<td>Number theory / algebraic geometry</td>
-							<td>Medium&ndash;high</td>
-							<td>Deep dependencies; local/global compatibility</td>
-						</tr>
-						<tr>
-							<td>Low-dimensional topology</td>
-							<td>Medium</td>
-							<td>Representation changes and diagrammatic moves</td>
-						</tr>
-						<tr>
-							<td>Analysis / probability</td>
-							<td>Medium&ndash;low</td>
-							<td>Finding norms, scales, couplings, and estimates</td>
-						</tr>
-						<tr>
-							<td>PDE / geometric analysis</td>
-							<td>Lower at present</td>
-							<td>Multiscale behaviour and singular limits</td>
-						</tr>
-						<tr>
-							<td>Applied mathematics / physics</td>
-							<td>Lower without tools</td>
-							<td>Choosing and grounding the model</td>
-						</tr>
-					</tbody>
-				</table>
+			<section data-background-color="teal">
+				<h4> Where AI is clearly better</h4>
+				<ul>
+					<li class="fragment">The <em>breadth</em> of AI is incredible &ndash; it is competent across essentially all of mathematics.</li>
+
+					<li class="fragment">AI systems also greatly exceed mathematicians in diligence, persistence, energy etc., especially with coding agents lkie <em>Codex</em>.</li>
+					<li class="fragment">Thus mathematicians need to choose and focus on the most promising directions or roadmaps for a goal, while AI systems can pursue dozens of directions simultaneously.</li>
+
+					<li class="fragment">But AI needs to have a reasonable judgement of how long to persist, which seems to be the case.</li>
+
+				</ul>
 			</section>
+
 
 						<section data-background-image="hills.png"> <h1>LeanLang</h1> </section>
 
@@ -1098,14 +1031,15 @@ def inductionCode (translator : CodeGenerator := {}) :
 			<section data-background-image="Vidit_Nanda_Leiden.png" data-background-size="contain"></section>
 
 			<section>
+				<h3>What is Mathematics? A view</h3>
 				<ul>
-					<li>Knowledge beyond a cataloguing of facts depends on <strong>abstraction</strong>, i.e., the hiding away of details that are not relevant to what we seek to understand and considering only the essential features.</li>
+					<li class="fragment">Knowledge beyond a cataloguing of facts depends on <strong>abstraction</strong>, i.e., the hiding away of details that are not relevant to what we seek to understand and considering only the essential features.</li>
 
 					<li class="fragment">For example, when studying a point-mass in mechanics we ignore the colour.</li>
-					<li class="fragment">Abstraction is done explicitly in working with modular systems in engineering, for instance in software engineering.
+					<li class="fragment">Abstraction in engineering facilitates <em>modular design</em>.
 					</li>
 
-					<li class="fragment">In all these cases, we abstract by specifying the properties of our system that we are concerned with and studying the system (or its idealised version) in terms of those properties.</li>
+					<li class="fragment">We abstract by specifying the properties of our system that we are concerned with and studying the system in terms of those properties.</li>
 
 				</ul>
 			</section>
@@ -1123,8 +1057,10 @@ def inductionCode (translator : CodeGenerator := {}) :
 			</section>
 
 			<section>
+				<h3>Mathematics and AI?</h3>
+
 				<ul>
-					<li>Thus, mathematics (with proofs) can be applied to those aspects of science/engineering that can be abstracted.</li>
+					<li class="fragment">Thus, mathematics (with proofs) can be applied to those aspects of science/engineering that can be abstracted.</li>
 
 					<li class="fragment">However, in many cases alternatives to proofs - numerics, simulation, heuristics - are used.</li>
 					<li class="fragment">In some cases (such as software verification) this is because the mathematics is tedious and labour-intensive; in others it is too hard.
